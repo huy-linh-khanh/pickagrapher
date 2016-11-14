@@ -8,4 +8,6 @@ class Photographer < ApplicationRecord
   has_many :price_rates
   has_one :portfolio
   has_many :orders
+  has_many :notifications
+  has_one :location
 end

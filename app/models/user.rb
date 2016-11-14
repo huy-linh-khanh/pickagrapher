@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :bookmarks
   has_many :orders
+  has_many :notifications
 end

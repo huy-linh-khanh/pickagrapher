@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  content: MyText
+  create_time: 2016-11-15 02:24:28
+  order: one
+  status: 1
+
+two:
+  user: two
+  content: MyText
+  create_time: 2016-11-15 02:24:28
+  order: two
+  status: 1

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114191308) do
+ActiveRecord::Schema.define(version: 20161114192428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,18 @@ ActiveRecord::Schema.define(version: 20161114191308) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["country_id"], name: "index_locations_on_country_id", using: :btree
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "content"
+    t.datetime "create_time"
+    t.integer  "order_id"
+    t.integer  "status",      default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.index ["order_id"], name: "index_notifications_on_order_id", using: :btree
+    t.index ["user_id"], name: "index_notifications_on_user_id", using: :btree
   end
 
   create_table "orders", force: :cascade do |t|
@@ -168,6 +180,8 @@ ActiveRecord::Schema.define(version: 20161114191308) do
   add_foreign_key "busy_dates", "photographers"
   add_foreign_key "images", "albums"
   add_foreign_key "locations", "countries"
+  add_foreign_key "notifications", "orders"
+  add_foreign_key "notifications", "users"
   add_foreign_key "orders", "locations"
   add_foreign_key "orders", "photographers"
   add_foreign_key "orders", "users"
