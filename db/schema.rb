@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114193921) do
+ActiveRecord::Schema.define(version: 20161114200222) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -113,6 +113,8 @@ ActiveRecord::Schema.define(version: 20161114193921) do
     t.integer  "user_account_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "location_id"
+    t.index ["location_id"], name: "index_photographers_on_location_id", using: :btree
     t.index ["user_account_id"], name: "index_photographers_on_user_account_id", using: :btree
   end
 
@@ -195,6 +197,7 @@ ActiveRecord::Schema.define(version: 20161114193921) do
   add_foreign_key "orders", "locations"
   add_foreign_key "orders", "photographers"
   add_foreign_key "orders", "users"
+  add_foreign_key "photographers", "locations"
   add_foreign_key "portfolios", "photographers"
   add_foreign_key "price_rates", "categories"
   add_foreign_key "price_rates", "photographers"

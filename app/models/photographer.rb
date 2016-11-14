@@ -10,5 +10,5 @@ class Photographer < ApplicationRecord
   has_one    :portfolio
   has_many   :orders
   has_many   :notifications
-  has_one    :location
+  belongs_to :location
 end
