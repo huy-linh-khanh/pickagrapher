@@ -1,6 +1,7 @@
 class Photographer < ApplicationRecord
   belongs_to :user_account, class_name: 'User'
   has_many :ratings
+  has_one :aggregate_rating
   has_many :reviews
   has_many :shooting_locations
   has_many :bookmarks

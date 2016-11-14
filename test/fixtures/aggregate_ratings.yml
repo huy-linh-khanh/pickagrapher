@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rating: 1.5
+  rate_count: 1
+  photographer: one
+
+two:
+  rating: 1.5
+  rate_count: 1
+  photographer: two
