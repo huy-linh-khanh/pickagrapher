@@ -1,14 +1,14 @@
 class Photographer < ApplicationRecord
   belongs_to :user_account, class_name: 'User'
-  has_many :ratings
-  has_one :aggregate_rating
-  has_many :reviews
-  has_many :shooting_locations
-  has_many :bookmarks
-  has_one :busy_date
-  has_many :price_rates
-  has_one :portfolio
-  has_many :orders
-  has_many :notifications
-  has_one :location
+  has_many   :ratings
+  has_one    :aggregate_rating
+  has_many   :reviews
+  has_many   :shooting_locations
+  has_many   :bookmarks
+  has_one    :busy_date
+  has_many   :price_rates
+  has_one    :portfolio
+  has_many   :orders
+  has_many   :notifications
+  has_one    :location
 end
