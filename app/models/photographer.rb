@@ -5,4 +5,5 @@ class Photographer < ApplicationRecord
   has_many :shooting_locations
   has_many :bookmarks
   has_one :busy_date
+  has_many :price_rates
 end

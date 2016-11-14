@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114181621) do
+ActiveRecord::Schema.define(version: 20161114184628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,17 @@ ActiveRecord::Schema.define(version: 20161114181621) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["user_account_id"], name: "index_photographers_on_user_account_id", using: :btree
+  end
+
+  create_table "price_rates", force: :cascade do |t|
+    t.integer  "photographer_id"
+    t.integer  "category_id"
+    t.float    "unit_rate"
+    t.float    "travel_rate"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["category_id"], name: "index_price_rates_on_category_id", using: :btree
+    t.index ["photographer_id"], name: "index_price_rates_on_photographer_id", using: :btree
   end
 
   create_table "ratings", force: :cascade do |t|
@@ -112,6 +123,8 @@ ActiveRecord::Schema.define(version: 20161114181621) do
   add_foreign_key "bookmarks", "users"
   add_foreign_key "busy_dates", "photographers"
   add_foreign_key "locations", "countries"
+  add_foreign_key "price_rates", "categories"
+  add_foreign_key "price_rates", "photographers"
   add_foreign_key "ratings", "photographers"
   add_foreign_key "ratings", "users"
   add_foreign_key "reviews", "photographers"
