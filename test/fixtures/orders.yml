@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  starts_date: 2016-11-15
+  ends_date: 2016-11-15
+  create_time: 2016-11-15 02:13:08
+  user: one
+  photographer: one
+  status: 1
+  shooting_location: one
+
+two:
+  starts_date: 2016-11-15
+  ends_date: 2016-11-15
+  create_time: 2016-11-15 02:13:08
+  user: two
+  photographer: two
+  status: 1
+  shooting_location: two

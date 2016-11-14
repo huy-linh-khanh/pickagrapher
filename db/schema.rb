@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114185810) do
+ActiveRecord::Schema.define(version: 20161114191308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,21 @@ ActiveRecord::Schema.define(version: 20161114185810) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["country_id"], name: "index_locations_on_country_id", using: :btree
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.date     "starts_date"
+    t.date     "ends_date"
+    t.datetime "create_time"
+    t.integer  "user_id"
+    t.integer  "photographer_id"
+    t.integer  "status",          default: 0
+    t.integer  "location_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.index ["location_id"], name: "index_orders_on_location_id", using: :btree
+    t.index ["photographer_id"], name: "index_orders_on_photographer_id", using: :btree
+    t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
   end
 
   create_table "photographers", force: :cascade do |t|
@@ -153,6 +168,9 @@ ActiveRecord::Schema.define(version: 20161114185810) do
   add_foreign_key "busy_dates", "photographers"
   add_foreign_key "images", "albums"
   add_foreign_key "locations", "countries"
+  add_foreign_key "orders", "locations"
+  add_foreign_key "orders", "photographers"
+  add_foreign_key "orders", "users"
   add_foreign_key "portfolios", "photographers"
   add_foreign_key "price_rates", "categories"
   add_foreign_key "price_rates", "photographers"

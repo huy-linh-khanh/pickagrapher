@@ -7,4 +7,5 @@ class Photographer < ApplicationRecord
   has_one :busy_date
   has_many :price_rates
   has_one :portfolio
+  has_many :orders
 end
