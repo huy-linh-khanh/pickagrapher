@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_one :photographer_account, class_name: 'Photographer'
   has_many :ratings
   has_many :reviews
+  has_many :bookmarks
 end
