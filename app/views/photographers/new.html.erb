@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Be a Photographer</h2>
+  <br />
+  <div class="form">
+    <%= form_for Photographer.new do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="form-group">
+      <%= f.label :location_id %>
+      <%= f.select :location_id, Location.all.collect { |location| [location.name, location.id] }, prompt: "Select location" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Add"%>
+    </div>
+    <% end %>
+  </div>
+</div>

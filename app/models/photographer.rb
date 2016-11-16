@@ -1,4 +1,6 @@
 class Photographer < ApplicationRecord
+  validates :name, :location_id, :user_account_id, presence: true
+
   belongs_to :user_account, class_name: 'User'
   has_many   :ratings
   has_one    :aggregate_rating
