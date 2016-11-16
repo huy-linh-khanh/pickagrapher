@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
-  has_one  :photographer_account, class_name: 'Photographer'
+  has_one  :photographer
   has_many :ratings
   has_many :reviews
   has_many :bookmarks
