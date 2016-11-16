@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Add Category</h2>
+  <br />
+  <div class="form">
+    <%= form_for Category.new do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="form-group">
+      <%= f.label :unit_name %>
+      <%= f.text_field :unit_name %>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Add"%>
+    </div>
+    <% end %>
+  </div>
+</div>

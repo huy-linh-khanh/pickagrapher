@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Add Location</h2>
+  <br />
+  <div class="form">
+    <%= form_for Location.new do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="form-group">
+      <%= f.label :country_id %>
+      <%= f.select :country_id, Country.all.collect { |country| [country.name, country.id] }, prompt: "Select country" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Add"%>
+    </div>
+    <% end %>
+  </div>
+</div>
