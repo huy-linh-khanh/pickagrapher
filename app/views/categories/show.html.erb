@@ -1,0 +1,23 @@
+<div class="container">
+  <% @photographers.each do |photographer| %>
+    <div class="card">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-block">
+        <h4 class="card-title">
+          <%= link_to photographer.name, portfolios_path(:photographer => photographer, :category => params[:id])%>
+        </h4>
+        <p class="card-text"><%= photographer.portfolio.description %></p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <% show_albums_follow_photographer_and_category(photographer).each do |album| %>
+          <li class="list-group-item"><%= album.name %></li>
+        <% end %>
+      </ul>
+      <div class="card-block">
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+    <hr />
+  <% end %>
+</div>

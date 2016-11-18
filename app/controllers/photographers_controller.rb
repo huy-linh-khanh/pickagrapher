@@ -5,10 +5,10 @@ class PhotographersController < ApplicationController
   end
 
   def create
-    @photographer = Photographer.new photogpher_params
-    @photographer.user_account_id = current_user.id
+    @photographer = Photographer.new photographer_params
+    @photographer.user = current_user
     if @photographer.save
-      redirect_to root_path
+       add_portfolio
     else
       redirect_to :back
     end
@@ -16,7 +16,7 @@ class PhotographersController < ApplicationController
 
   def add_portfolio
     @portfolio = Portfolio.new
-    @portfolio.photographer = current_user.photographer_account
+    @portfolio.photographer = current_user.photographer
     if @portfolio.save
       redirect_to root_path
     else
@@ -25,7 +25,7 @@ class PhotographersController < ApplicationController
   end
 
   private
-  def photogpher_params
+  def photographer_params
       params.require(:photographer).permit(:name, :location_id)
   end
 end

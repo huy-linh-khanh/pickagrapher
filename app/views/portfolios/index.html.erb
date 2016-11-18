@@ -1,5 +1,39 @@
 <div class="container">
   <h2>My Portfolio</h2>
   <br />
-  <%= link_to "Add new Album", class: "btn btn-primary" %>
+  <% if current_photographer %>
+    <%= link_to "Add new Album", new_album_path, class: "btn btn-primary" %>
+  <% else %>
+    <%= link_to "Book now!", new_order_path(:photographer => params[:photographer], :category => params[:category]), class: "btn btn-primary" %>
+  <% end %>
+  <%# if current_photographer != params[:photographer] || !current_photographer %>
+  <% if !is_bookmarked?(params[:photographer]) %>
+    <%= link_to "Add to favorite", bookmarks_path(:photographer => params[:photographer]), method: "post", class: "btn btn-warning" %>
+  <% end %>
+  <hr />
+  <% @albums.each do |album| %>
+    <div class="card">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-block">
+        <h4 class="card-title">
+          <%= link_to album.name, album_path(album) %>
+        </h4>
+        <p class="card-text"><%= album.description %></p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+      <div class="card-block">
+        <%= link_to "Update", album_path(album), method: "patch", class: "card-link" %>
+        <%= link_to "Delete", album_path(album), method: "delete", class: "card-link" %>
+        <% if !is_published?(album) %>
+          <%= link_to "Publish", album_publish_path(:id => album), method: "post", class: "card-link" %>
+        <% end %>
+      </div>
+    </div>
+    <hr />
+  <% end %>
+
 </div>

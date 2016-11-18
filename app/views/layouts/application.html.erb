@@ -31,14 +31,14 @@
                   <li class="nav-item <%= 'active' if request.path == stores_path %>">
                     <%= link_to "Manage Store", stores_path, class: 'nav-link'%>
                   </li>
-                  <li class="nav-item <%= 'active' if request.path == stores_path %>">
-                    <%= link_to "Add Portfolio", portfolio_create_path, method: "post", class: 'nav-link'%>
-                  </li>
                 <% else %>
-                  <li class="nav-item <%= 'active' if request.path == new_photographers_path %>">
-                    <%= link_to "Be a Photographer!", new_photographers_path, class: 'nav-link'%>
+                  <li class="nav-item <%= 'active' if request.path == new_photographer_path %>">
+                    <%= link_to "Be a Photographer!", new_photographer_path, class: 'nav-link'%>
                   </li>
                 <% end %>
+                <li class="nav-item <%= 'active' if request.path == orders_path %>">
+                  <%= link_to "My booking", orders_path, class: 'nav-link'%>
+                </li>
               <% else %>
                 <li class="nav-item <%= 'active' if request.path == new_user_session_path %>">
                   <%= link_to "Login", new_user_session_path, class: 'nav-link'%>

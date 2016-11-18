@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>My Booking</h1>
+  <% if is_photographer? %>
+    <% @orders.each do |order| %>
+      <hr />
+      <div class="jumbotron">
+        <h1 class="display-3"><%= order.location.name %></h1>
+        <p class="lead">Client: <%= order.user.name %></p>
+        <hr class="my-2">
+        <p>Start date: <%= order.starts_date %> </p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" role="button">Click here for details</a>
+        </p>
+      </div>
+    <% end %>
+  <% else %>
+    <% @orders.each do |order| %>
+      <hr />
+      <div class="jumbotron">
+        <h1 class="display-3"><%= order.location.name %></h1>
+        <p class="lead">Photographer: <%= order.photographer.name %></p>
+        <hr class="my-2">
+        <p>Start date: <%= order.starts_date %> </p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" role="button">Click here for details</a>
+        </p>
+      </div>
+    <% end %>
+  <% end %>
+
+</div>
+
+<!-- t.date     "starts_date"
+t.date     "ends_date"
+t.datetime "create_time"
+t.integer  "user_id"
+t.integer  "photographer_id"
+t.integer  "status",          default: 0
+t.integer  "location_id" -->

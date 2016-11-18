@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161116121843) do
+ActiveRecord::Schema.define(version: 20161118071508) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,6 +31,9 @@ ActiveRecord::Schema.define(version: 20161116121843) do
     t.datetime "create_time"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "name"
+    t.datetime "publish_at"
+    t.datetime "update_at"
     t.index ["category_id"], name: "index_albums_on_category_id", using: :btree
     t.index ["portfolio_id"], name: "index_albums_on_portfolio_id", using: :btree
   end
@@ -102,6 +106,8 @@ ActiveRecord::Schema.define(version: 20161116121843) do
     t.integer  "location_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.integer  "category_id"
+    t.index ["category_id"], name: "index_orders_on_category_id", using: :btree
     t.index ["location_id"], name: "index_orders_on_location_id", using: :btree
     t.index ["photographer_id"], name: "index_orders_on_photographer_id", using: :btree
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
@@ -194,6 +200,7 @@ ActiveRecord::Schema.define(version: 20161116121843) do
   add_foreign_key "locations", "countries"
   add_foreign_key "notifications", "orders"
   add_foreign_key "notifications", "users"
+  add_foreign_key "orders", "categories"
   add_foreign_key "orders", "locations"
   add_foreign_key "orders", "photographers"
   add_foreign_key "orders", "users"
