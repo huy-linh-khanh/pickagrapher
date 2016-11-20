@@ -26,6 +26,10 @@
                 <li class="nav-item <%= 'active' if request.path == destroy_user_session_path %>">
                   <%= link_to "#{current_user.name}. Logout", destroy_user_session_path, method: "delete", class: 'nav-link'%>
                 </li>
+                <li class="nav-item <%= 'active' if request.path == destroy_user_session_path %>">
+                  <%= link_to "Edit Profie", edit_user_registration_path, class: 'nav-link'%>
+                </li>
+                <li class="nav-item round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
 
                 <% if is_photographer? %>
                   <li class="nav-item <%= 'active' if request.path == stores_path %>">
@@ -46,6 +50,7 @@
               <% end %>
 
             </ul>
+
             <!-- <form class="form-inline pull-xs-right">
             <input class="form-control" type="text" placeholder="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
