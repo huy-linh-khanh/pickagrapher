@@ -9,8 +9,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag  params[:controller] %>
   </head>
-
   <body>
+    <%= render 'layouts/nav_bar' %>
+
+
     <div class="container-fluid">
       <nav class="navbar navbar-dark bg-info">
         <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
