@@ -22,14 +22,18 @@
               <li class="nav-item <%= 'active' if request.path == root_path %>">
                 <%= link_to "Home", root_path, class: 'nav-link'%>
               </li>
+              <li class="nav-item <%= 'active' if request.path == authentications_path %>">
+                <%= link_to "Authentication", authentications_path, class: 'nav-link'%>
+              </li>
               <% if user_signed_in? %>
                 <li class="nav-item <%= 'active' if request.path == destroy_user_session_path %>">
                   <%= link_to "#{current_user.name}. Logout", destroy_user_session_path, method: "delete", class: 'nav-link'%>
                 </li>
-                <li class="nav-item <%= 'active' if request.path == destroy_user_session_path %>">
+                <li class="nav-item <%= 'active' if request.path == edit_user_registration_path %>">
                   <%= link_to "Edit Profie", edit_user_registration_path, class: 'nav-link'%>
                 </li>
-                <li class="nav-item round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
+                <!-- <li class="nav-item round-image-50"><%# image_tag(current_user.avatar.url(:thumb)) %></li> -->
+                <li class="nav-item round-image-50"><%= image_tag(current_user.image_url) %></li>
 
                 <% if is_photographer? %>
                   <li class="nav-item <%= 'active' if request.path == stores_path %>">
