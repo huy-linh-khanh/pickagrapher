@@ -16,7 +16,12 @@ class SessionsController < ApplicationController
       @image_url = @auth['info']['image']
       @name = @auth['info']['name']
       @email = @auth['info']['email']
-    when "google"
+    when "google_oauth2"
+      @provider = params[:provider]
+      @uid = @auth['uid']
+      @image_url = @auth['info']['image']
+      @name = @auth['info']['name']
+      @email = @auth['info']['email']
     end
 
     @authentication = Authentication.where(provider: @provider, uid: @uid).first
