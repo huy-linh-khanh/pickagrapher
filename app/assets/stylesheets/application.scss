@@ -1,9 +1,18 @@
 @import "bootstrap";
-@import "./template/bootstrap.extension.css";
+@import "./template/bootstrap.extension.scss";
 @import "./template/boxesFx.css";
 @import "./template/font-awesome.min.css";
 @import "./template/simplelightbox.css";
-@import "./template/style.css";
+@import "./template/style.scss";
 @import "./template/swiper.css";
+@import "./template/style_2.scss";
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Inconsolata);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Lora);
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+
+body {
+  background-color: #000;
+}
