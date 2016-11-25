@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   resources :bookmarks, only: [:index, :create, :destroy]
   resources :authentications
   resources :uploads
+  resources :images
 
 
   # get 'stores' => 'stores#index'

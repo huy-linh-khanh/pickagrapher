@@ -13,10 +13,14 @@
 <% if @album.images %>
   <% @album.images.each do |image| %>
     <%= image_tag(image.url_url(:medium)) %>
-    <br />
+    <%= link_to "Delete", image_path(image), method: "delete", class: "btn btn-primary" %>
+    <hr />
   <% end %>
 <% end %>
 <div class="form-group">
   <%= f.label "Images" %>
-  <%= file_field_tag "url[]", type: :file, multiple: true %>
+  <%= file_field_tag "url[]", type: :file, multiple: true, class: "upload-image" %>
+</div>
+<div id="preview">
+
 </div>
