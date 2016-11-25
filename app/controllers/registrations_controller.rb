@@ -10,7 +10,7 @@ class RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    unless params[:provider] == nil && params[:uid]
+    if !(params[:provider].empty? || params[:uid].empty?)
       @authentication = Authentication.new
       @authentication.user = User.last
       @authentication.provider = params[:provider]
@@ -31,6 +31,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   def update
+    # raise
     super
   end
 

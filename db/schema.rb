@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161121093914) do
+ActiveRecord::Schema.define(version: 20161124093157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -183,6 +183,12 @@ ActiveRecord::Schema.define(version: 20161121093914) do
     t.index ["photographer_id"], name: "index_shooting_locations_on_photographer_id", using: :btree
   end
 
+  create_table "uploads", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email",                  default: "", null: false
@@ -204,6 +210,7 @@ ActiveRecord::Schema.define(version: 20161121093914) do
     t.string   "image_url"
     t.string   "facebook_id"
     t.string   "google_id"
+    t.string   "profile_image"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

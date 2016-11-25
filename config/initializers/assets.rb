@@ -59,6 +59,8 @@ Rails.application.config.assets.precompile += %w( policies.scss )
 Rails.application.config.assets.precompile += %w( policies.js )
 Rails.application.config.assets.precompile += %w( authentications.scss )
 Rails.application.config.assets.precompile += %w( authentications.js )
+Rails.application.config.assets.precompile += %w( uploads.scss )
+Rails.application.config.assets.precompile += %w( uploads.js )
 
 %w( ).each do |controller|
 Rails.application.config.assets.precompile += ["#{controller}.js", "#{controller}.scss"]

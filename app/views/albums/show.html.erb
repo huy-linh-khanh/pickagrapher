@@ -3,5 +3,11 @@
   <p>
     Show images in this album here
   </p>
-
+  <% @album.images.each do |image| %>
+    <div>
+      <%= image_tag(image.url_url(:medium)) %>
+    </div>
+    <br />
+  <% end %>
+  <%= link_to "Back", portfolios_path, class: "btn btn-primary" %>
 </div>
