@@ -45,14 +45,24 @@
     <div id="content-block">
       <div class="wide-container-fluid">
         <div class="row">
-          <%= render partial: 'category_img_link', locals: { category_name: 'WEDDING', image_name: 'image01.jpg' } %>
+          <%= render partial: 'category_img_link', locals: { category_name: 'WEDDING', image_name: 'wedding.jpg' } %>
           <%= render partial: 'category_img_link', locals: { category_name: 'INTERIOR', image_name: 'image43.jpg' } %>
         </div>
         <div class="row">
           <%= render partial: 'category_img_link', locals: { category_name: 'PORTRAIT', image_name: 'image11.jpg' } %>
-          <%= render partial: 'category_img_link', locals: { category_name: 'PRODUCTS', image_name: 'image43.jpg' } %>
+          <%= render partial: 'category_img_link', locals: { category_name: 'PRODUCTS', image_name: 'image01.jpg' } %>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Js -->
+<script>
+ $(function(){
+   $('.poster-3d').parallax({
+     shadow: true,
+     shine: false
+   });
+ });
+</script>
