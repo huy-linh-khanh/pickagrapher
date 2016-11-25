@@ -23,59 +23,34 @@
   </div>
 </div>
 
-<!-- Category Images -->
-<div class="stamford-theme-wrapper">
-  <div id="wrap">
-    <div clas="content-wrapper">
-      <div id="content">
-        <div class="container clearfix">
-          <div id="container" class="clearfix" style="position: relative;">
-            <div class="element clearfix col1-3 portfolio menu" style="position: absolute; left: 0px; top: 0px;">
-              <div class="images"><%= image_tag('image11') %></div>
-              <div class="white white-bottom">
-                <h2>Selected Photos</h2>
-                <p>Browse through my portfolio:</p>
-              </div>
-            </div>
-
-            <div class="element clearfix col1-3 home portfolio germany" style="position: absolute; left: 380px; top: 0px;">
-              <div class="images">
-                <%= image_tag('image01') %>
-                <div class="hidden-infos" style="display: none; opacity: 1;">
-                  <div class="overlay"></div>
-                </div>
-                <div class="title">
-                  <div class="title-wrap" style="width: 0px;">
-                    <h3>Castle on Water</h3>
-                  </div>
-                </div>
-                <div class="subtitle">
-                  <div class="subtitle-wrap" style="width: 0px;">
-                    <p>Germany</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="element clearfix col1-3 half portfolio sweden" style="position: absolute; left: 760px; top: 0px;">
-              <div class="images">
-                <%= image_tag('image43') %>
-                <div class="hidden-infos" style="display: none; opacity: 1;">
-                  <div class="overlay"></div>
-                </div>
-                <div class="title">
-                  <div class="title-wrap" style="width: 0px;">
-                    <h3>Cool Train</h3>
-                  </div>
-                </div>
-                <div class="subtitle">
-                  <div class="subtitle-wrap" style="width: 0px;">
-                    <p>Sweden</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+<div class="modesto-theme-wrapper">
+  <div class="fonts-7 loaded">
+    <div id="content-block">
+      <div class="container">
+        <div class="empty-space col-xs-b55 col-sm-b70"></div>
+        <div class="row">
+          <div class="col-md-8 offset-md-2 text-center" style="margin-left: 18%">
+            <div class="h4"><b style="color: #EEE">PICK A PHOTOGRAPHER FOR</b></div>
           </div>
+        </div>
+        <div class="empty-space col-xs-b55 col-sm-b70"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Category Images -->
+<div class="modesto-theme-wrapper">
+  <div class="fonts-8 loaded">
+    <div id="content-block">
+      <div class="wide-container-fluid">
+        <div class="row">
+          <%= render partial: 'category_img_link', locals: { category_name: 'WEDDING', image_name: 'image01.jpg' } %>
+          <%= render partial: 'category_img_link', locals: { category_name: 'INTERIOR', image_name: 'image43.jpg' } %>
+        </div>
+        <div class="row">
+          <%= render partial: 'category_img_link', locals: { category_name: 'PORTRAIT', image_name: 'image11.jpg' } %>
+          <%= render partial: 'category_img_link', locals: { category_name: 'PRODUCTS', image_name: 'image43.jpg' } %>
         </div>
       </div>
     </div>
