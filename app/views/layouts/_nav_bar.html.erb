@@ -5,7 +5,7 @@
         <div class="wide-container-fluid">
           <div class="row">
             <div class="col-xs-6 col-sm-2">
-              <a class="logo"><%= image_tag('logo') %></a>
+              <%= link_to image_tag('logo'), root_path, class: "logo" %>
             </div>
             <div class="col-xs-6 col-sm-10 text-right">
               <div class="navigation-wrapper">
@@ -13,12 +13,12 @@
                 <div class="navigation-overflow">
                   <nav class="text-left clearfix">
                     <ul>
-                      <li class="active">
-                        <a href="about1.html">About</a>
-                      </li>
-                      <li>
-                        <a href="services1.html">Services</a>
-                      </li>
+                      <% if user_signed_in? %>
+                      <% else %>
+                        <li class="<%= 'active' if request.path == new_user_session_path %>">
+                          <%= link_to 'Sign In', new_user_session_path %>
+                        </li>
+                      <% end %>
                     </ul>
                   </nav>
                 </div>
