@@ -1,24 +1,68 @@
-<div class="container">
-  <h1>Home Index</h1>
-  <br />
-  <%= link_to "Add Country", new_country_path %>
-  <%= link_to "Add Location", new_location_path %>
-  <%= link_to "Add Category", new_category_path %>
-  <hr />
-  Show Khung Search
-  <hr />
-  <% @categories.each do |category| %>
-    <div class="list-group">
-      <%= link_to category.name, category_path(category), class: "list-group-item list-group-item-action" %>
-      <br />
-      <!-- <a href="#" class="list-group-item active">
-        Cras justo odio
-      </a>
-      <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-      <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-      <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-      <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a> -->
+<!-- Video Background -->
+<div class="modesto-theme-wrapper">
+  <div class="fonts-8 loaded">
+    <div class="page-height" style="height: 703px; min-height: 703px;">
+      <div class="full-size video-wrapper">
+        <%= video_tag("home_video.mp4", autoplay: true, loop: true, muted: true) %>
+      </div>
+      <div class="full-size-banner-entry full-size valign-middle">
+        <div class="valign-text-wrapper text-center">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="h2 light"><%= image_tag('logo.png') %><b>ICKAGRAPHER</b></div>
+              <div class="empty-space col-xs-b15"></div>
+              <div class="banner-max-width">
+                <div class="simple-article large light transparent">Your moments, captured!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-button style-3 light hidden-xs"></div>
     </div>
-  <% end %>
-
+  </div>
 </div>
+
+<div class="modesto-theme-wrapper">
+  <div class="fonts-7 loaded">
+    <div id="content-block">
+      <div class="container">
+        <div class="empty-space col-xs-b55 col-sm-b70"></div>
+        <div class="row">
+          <div class="col-md-8 offset-md-2 text-center" style="margin-left: 18%">
+            <div class="h4"><b style="color: #EEE">PICK A PHOTOGRAPHER FOR</b></div>
+          </div>
+        </div>
+        <div class="empty-space col-xs-b55 col-sm-b70"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Category Images -->
+<div class="modesto-theme-wrapper">
+  <div class="fonts-8 loaded">
+    <div id="content-block">
+      <div class="wide-container-fluid">
+        <div class="row">
+          <%= render partial: 'category_img_link', locals: { category_name: 'WEDDING', image_name: 'wedding.jpg' } %>
+          <%= render partial: 'category_img_link', locals: { category_name: 'INTERIOR', image_name: 'image43.jpg' } %>
+        </div>
+        <div class="row">
+          <%= render partial: 'category_img_link', locals: { category_name: 'PORTRAIT', image_name: 'image11.jpg' } %>
+          <%= render partial: 'category_img_link', locals: { category_name: 'PRODUCTS', image_name: 'image01.jpg' } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Js -->
+<script>
+ $(function(){
+   $('.poster-3d').parallax({
+     shadow: true,
+     shine: false
+   });
+ });
+</script>

@@ -15,6 +15,7 @@
 //= require tether
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require_tree ./template
 
 $(function(){
   $(".upload-image").on("change", function(){

@@ -27,11 +27,9 @@ Rails.application.routes.draw do
   resources :uploads
   resources :images
 
-
   # get 'stores' => 'stores#index'
   # get 'bookings' => 'bookings#index'
   # get 'portfolios' => 'portfolios#index'
   post 'portfolio/create' => 'photographers#add_portfolio'
   post 'album/publish' => 'albums#publish'
-
 end

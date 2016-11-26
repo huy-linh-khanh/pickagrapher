@@ -203,10 +203,6 @@ ActiveRecord::Schema.define(version: 20161124093157) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
     t.string   "image_url"
     t.string   "facebook_id"
     t.string   "google_id"
