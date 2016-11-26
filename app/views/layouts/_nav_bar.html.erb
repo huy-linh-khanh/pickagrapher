@@ -9,11 +9,27 @@
             </div>
             <div class="col-xs-6 col-sm-10 text-right">
               <div class="navigation-wrapper">
-                <a class="logo responsive"><%= image_tag('logo.png') %></a>
                 <div class="navigation-overflow">
                   <nav class="text-left clearfix">
                     <ul>
                       <% if user_signed_in? %>
+                        <% if is_photographer? %>
+                          <li class="<%= 'active' if request.path == stores_path %>">
+                            <%= link_to "Manage Store", stores_path%>
+                          </li>
+                        <% else %>
+                          <li>
+                            <%= link_to 'Be a Photographer', new_photographer_path %>
+                          </li>
+                        <% end %>
+                        <li>
+                          <%= image_tag(current_user.image_url ? current_user.image_url : current_user.profile_image, class: 'logo nav-item round-image-50') %>
+                          <ul>
+                            <li><%= link_to "My Account", edit_user_registration_path %></li>
+                            <li><%= link_to "My booking", orders_path %></li>
+                            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+                          </ul>
+                        </li>
                       <% else %>
                         <li class="<%= 'active' if request.path == new_user_session_path %>">
                           <%= link_to 'Sign In', new_user_session_path %>
