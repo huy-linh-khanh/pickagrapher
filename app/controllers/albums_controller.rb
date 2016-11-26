@@ -1,25 +1,39 @@
 class AlbumsController < ApplicationController
   # before_action :authenticate_user!
 
-  def index
-    # @album = params[:category] ? Album.where(cate)
+  def new
+    @album = Album.new
   end
 
   def create
-    @album = Album.new album_params
-    @album.portfolio = current_user.photographer.portfolio
+    @album = current_photographer.portfolio.albums.build album_params
     @album.create_time = Time.now
     if @album.save
-      redirect_to portfolios_path
+      if params[:url]
+        params[:url].each do |u|
+          # raise
+          @image = @album.images.create!(:url => u)
+        end
+      end
+
+      redirect_to portfolios_path, notice: "Your album has been created."
     else
-      redirect_to :back
+      redirect_to :back, notice: "Something went wrong."
     end
   end
 
-  def destroy
+  def update
     @album = Album.find(params[:id])
-    if @event.update_attribute(:publish_at, nil)
-      redirect_to portfolios_path
+    # if @event.update_attribute(:publish_at, nil)
+    if @album.update album_params
+      if params[:url]
+        params[:url].each do |u|
+          # raise
+          @image = @album.images.create!(:url => u)
+        end
+      end
+      
+      redirect_to portfolios_path, notice: "Your album has been updated successfully"
     else
       redirect_to :back
     end
@@ -35,8 +49,16 @@ class AlbumsController < ApplicationController
     @album = Album.find(params[:id])
   end
 
-  private
+  def edit
+    @album = Album.find(params[:id])
+  end
 
+  def destroy
+    @album = Album.find(params[:id]).destroy
+    redirect_back(fallback_location: root_path)
+  end
+
+  private
   def album_params
     params.require(:album).permit(:name, :description, :category_id)
   end

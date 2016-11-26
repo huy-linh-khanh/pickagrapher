@@ -1,0 +1,13 @@
+<div class="container">
+  <h2>Edit Album</h2>
+  <br />
+  <div class="form">
+    <%= form_for @album, url: album_path(@album), :method => :put, :html => { :multipart => true } do |f| %>
+    <%= render partial: "form", :locals => {f: f} %>
+    <div class="form-group">
+      <%= f.submit "Add", class: "btn btn-primary"%>
+      <%= link_to 'Cancel', portfolios_path, class: "btn btn-secondary" %>
+    </div>
+    <% end %>
+  </div>
+</div>

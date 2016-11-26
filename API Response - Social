@@ -1,0 +1,107 @@
+=> #<OmniAuth::AuthHash
+    credentials=#<OmniAuth::AuthHash
+      expires=true
+      expires_at=1484887076
+      token="EAAUesH0gS4UBACWRE9yXWBHNxUQX7q8OvMmT6SlgxZCh
+        9jqBZBp7tIHAvZB5yW5zGdaPTyYI5erMqllqktgQ7tVdGjzZCZ
+        AmzwtajE5doIY1a22vOnxcpgbpB7Doz7awzidSgT0uGtpfWFtl
+        05sBygVpfXbJFxgud8JY1KrZAy4QZDZD">
+    extra=#<OmniAuth::AuthHash
+      raw_info=#<OmniAuth::AuthHash
+        email="baokhanh_0104@yahoo.com"
+        id="1482126951804711"
+        name="Lê Bảo Khanh">>
+    info=#<OmniAuth::AuthHash::InfoHash
+      email="baokhanh_0104@yahoo.com"
+      image="http://graph.facebook.com/v2.6/1482126951804711/picture"
+      name="Lê Bảo Khanh">
+    provider="facebook"
+    uid="1482126951804711">
+
+=> #<OmniAuth::AuthHash
+    credentials=#<OmniAuth::AuthHash
+      secret="idbvY2egXKbKsvLynO9t8rBq9MdhT9iJgpUYDmr6j4EqS"
+      token="753798986939658240-oBqRks858uEitEDTiAENeYALCMwdtIQ">
+    extra=#<OmniAuth::AuthHash 
+      access_token=#<OAuth::AccessToken:0x007fe8e7900df8
+        @token="753798986939658240-oBqRks858uEitEDTiAENeYALCMwdtIQ",
+        @secret="idbvY2egXKbKsvLynO9t8rBq9MdhT9iJgpUYDmr6j4EqS",
+        @consumer=#<OAuth::Consumer:0x007fe8e2b8b320
+          @key="zz5iEP6N5yiTjHB6FUgsdAjb7",
+          @secret="xBb5FJ5bc4DMHkWrqdh9cfXkYlcSAdVkUZdRzkcGfoEtGjUXUe",
+          @options={:signature_method=>"HMAC-SHA1",
+                    :request_token_path=>"/oauth/request_token",
+                    :authorize_path=>"/oauth/authenticate",
+                    :access_token_path=>"/oauth/access_token",
+                    :proxy=>nil,
+                    :scheme=>:header,
+                    :http_method=>:post,
+                    :oauth_version=>"1.0",
+                    :site=>"https://api.twitter.com"},
+          @http=#<Net::HTTP api.twitter.com:443 open=false>,
+          @http_method=:post,
+          @uri=#<URI::HTTPS https://api.twitter.com>>,
+        @params={:oauth_token=>"753798986939658240-oBqRks858uEitEDTiAENeYALCMwdtIQ",
+                  "oauth_token"=>"753798986939658240-oBqRks858uEitEDTiAENeYALCMwdtIQ",
+                 :oauth_token_secret=>"idbvY2egXKbKsvLynO9t8rBq9MdhT9iJgpUYDmr6j4EqS",
+                  "oauth_token_secret"=>"idbvY2egXKbKsvLynO9t8rBq9MdhT9iJgpUYDmr6j4EqS",
+                 :user_id=>"753798986939658240",
+                  "user_id"=>"753798986939658240",
+                 :screen_name=>"le_bao_khanh",
+                  "screen_name"=>"le_bao_khanh",
+                 :x_auth_expires=>"0",
+                  "x_auth_expires"=>"0"},
+        @response=#<Net::HTTPOK 200 OK readbody=true>>
+      raw_info=#<OmniAuth::AuthHash
+        contributors_enabled=false
+        created_at="Fri Jul 15 03:50:58 +0000 2016"
+        default_profile=true
+        default_profile_image=false
+        description=""
+        entities=#<OmniAuth::AuthHash
+          description=#<OmniAuth::AuthHash
+            urls=#<Hashie::Array []>>>
+        favourites_count=0
+        follow_request_sent=false
+        followers_count=1
+        following=false
+        friends_count=2
+        geo_enabled=false
+        has_extended_profile=false
+        id=753798986939658240
+        id_str="753798986939658240"
+        is_translation_enabled=false
+        is_translator=false lang="en"
+        listed_count=0 location=""
+        name="Le Bao Khanh"
+        notifications=false
+        profile_background_color="F5F8FA"
+        profile_background_image_url=nil
+        profile_background_image_url_https=nil
+        profile_background_tile=false
+        profile_image_url="http://pbs.twimg.com/profile_images/800350447026307072/kYTEmkON_normal.jpg"
+        profile_image_url_https="https://pbs.twimg.com/profile_images/800350447026307072/kYTEmkON_normal.jpg"
+        profile_link_color="1DA1F2"
+        profile_sidebar_border_color="C0DEED"
+        profile_sidebar_fill_color="DDEEF6"
+        profile_text_color="333333"
+        profile_use_background_image=true
+        protected=false
+        screen_name="le_bao_khanh"
+        statuses_count=0
+        time_zone="Hanoi"
+        translator_type="none"
+        url=nil utc_offset=25200
+        verified=false>>
+    info=#<OmniAuth::AuthHash::InfoHash
+      description=""
+      email=nil
+      image="http://pbs.twimg.com/profile_images/800350447026307072/kYTEmkON_normal.jpg"
+      location=""
+      name="Le Bao Khanh"
+      nickname="le_bao_khanh"
+      urls=#<OmniAuth::AuthHash
+        Twitter="https://twitter.com/le_bao_khanh"
+        Website=nil>>
+    provider="twitter"
+    uid="753798986939658240">

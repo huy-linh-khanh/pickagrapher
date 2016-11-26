@@ -21,12 +21,12 @@
         <p class="card-text"><%= album.description %></p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
+        <% album.images.each do |image| %>
+          <li class="list-group-item"><%= image.url %></li>
+        <% end %>
       </ul>
       <div class="card-block">
-        <%= link_to "Update", album_path(album), method: "patch", class: "card-link" %>
+        <%= link_to "Update", edit_album_path(album), class: "card-link" %>
         <%= link_to "Delete", album_path(album), method: "delete", class: "card-link" %>
         <% if !is_published?(album) %>
           <%= link_to "Publish", album_publish_path(:id => album), method: "post", class: "card-link" %>

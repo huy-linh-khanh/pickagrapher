@@ -1,12 +1,27 @@
 <div class="container">
   <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, :multipart => true }) do |f| %>
     <%= devise_error_messages! %>
+
+    <div class="form-group">
+      <% if current_user.profile_image.url.present? %>
+        <%= image_tag (current_user.profile_image)%>
+        <%= f.check_box :remove_profile_image %>
+      <% end %>
+      <%= f.label :profile_image %>
+      <%= f.file_field :profile_image, accept:'image/*' %>
+      <%= f.hidden_field :profile_image_cache %>
+    </div>
+
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name, autofocus: true %>
+    </div>
 
     <div class="field">
       <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
+      <%= f.email_field :email, autofocus: "off" %>
     </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
