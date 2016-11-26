@@ -1,6 +1,10 @@
 class AlbumsController < ApplicationController
   # before_action :authenticate_user!
 
+  def index
+    # @album = params[:category] ? Album.where(cate)
+  end
+
   def create
     @album = Album.new album_params
     @album.portfolio = current_user.photographer.portfolio
@@ -32,6 +36,7 @@ class AlbumsController < ApplicationController
   end
 
   private
+
   def album_params
     params.require(:album).permit(:name, :description, :category_id)
   end

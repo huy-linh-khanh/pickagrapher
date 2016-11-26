@@ -15,11 +15,9 @@ Rails.application.routes.draw do
   resources :orders, only: [:index, :new, :create, :show]
   resources :bookmarks, only: [:index, :create, :destroy]
 
-
   # get 'stores' => 'stores#index'
   # get 'bookings' => 'bookings#index'
   # get 'portfolios' => 'portfolios#index'
   post 'portfolio/create' => 'photographers#add_portfolio'
   post 'album/publish' => 'albums#publish'
-
 end
