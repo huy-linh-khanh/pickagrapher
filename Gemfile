@@ -28,6 +28,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem 'font-awesome-sass'
 gem 'dotenv-rails', groups: [:development, :test], require: 'dotenv/rails-now'
 
 group :development, :test do

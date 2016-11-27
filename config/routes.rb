@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   resources :authentications
   resources :uploads
   resources :images
+  resources :studios
 
   # get 'stores' => 'stores#index'
   # get 'bookings' => 'bookings#index'

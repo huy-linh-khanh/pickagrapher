@@ -15,7 +15,7 @@
                       <% if user_signed_in? %>
                         <% if is_photographer? %>
                           <li class="<%= 'active' if request.path == stores_path %>">
-                            <%= link_to "Manage Store", stores_path%>
+                            <%= link_to "Manage Store", stores_path %>
                           </li>
                         <% else %>
                           <li>
