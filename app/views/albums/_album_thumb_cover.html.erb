@@ -1,0 +1,31 @@
+<div class="row">
+  <% if cover_type == 0 %>
+    <div class="image col-md-4 album-thumb" style="background-image: url(<%= asset_path('image01') %>)">
+      <div class="white white-top">
+        <h2>About Me</h2>
+        <p>Phasellus leo ante, posuere in fringilla vitae, pretium at dui. Fusce et neque quis odio gravida auctor velno.</p>
+      </div>
+    </div>
+    <div class="image col-md-4 album-thumb" style="background-image: url(<%= asset_path('image11') %>)"></div>
+    <div class="image col-md-4 album-thumb" style="background-image: url(<%= asset_path('image43') %>)"></div>
+  <% else if cover_type == 1 %>
+    <div class="image col-md-4 album-thumb" style="background-image: url(<%= asset_path('image01') %>)">
+      <div class="white white-top">
+        <h2>About Me</h2>
+        <p>Phasellus leo ante, posuere in fringilla vitae, pretium at dui. Fusce et neque quis odio gravida auctor velno.</p>
+      </div>
+    </div>
+    <div class="image col-md-4 album-thumb-half" style="background-image: url(<%= asset_path('image11') %>)"></div>
+    <div class="image col-md-4 album-thumb-half" style="background-image: url(<%= asset_path('image43') %>)"></div>
+    <div class="image col-md-4 album-thumb-half" style="background-image: url(<%= asset_path('image11') %>)"></div>
+    <div class="image col-md-4 album-thumb-half" style="background-image: url(<%= asset_path('image43') %>)"></div>
+  <% else %>
+    <div class="image col-md-4 album-thumb" style="background-image: url(<%= asset_path('image01') %>)">
+      <div class="white white-top">
+        <h2>About Me</h2>
+        <p>Phasellus leo ante, posuere in fringilla vitae, pretium at dui. Fusce et neque quis odio gravida auctor velno.</p>
+      </div>
+    </div>
+    <div class="image col-md-8 album-thumb" style="background-image: url(<%= asset_path('image11') %>)"></div>
+  <% end %>
+</div>
