@@ -5,7 +5,7 @@
         <div class="wide-container-fluid">
           <div class="row">
             <div class="col-xs-6 col-sm-2">
-              <a class="logo"><%= image_tag('logo') %></a>
+              <%= link_to image_tag('logo'), root_path, class: "logo" %>
             </div>
             <div class="col-xs-6 col-sm-10 text-right">
               <div class="navigation-wrapper">
@@ -13,12 +13,30 @@
                 <div class="navigation-overflow">
                   <nav class="text-left clearfix">
                     <ul>
-                      <li class="active">
-                        <a href="about1.html">About</a>
-                      </li>
-                      <li>
-                        <a href="services1.html">Services</a>
-                      </li>
+                      <% unless user_signed_in? %>
+                        <li class="<%= 'active' if request.path == new_user_session_path %>">
+                          <%= link_to "Login", new_user_session_path %>
+                        </li>
+                      <% else %>
+                        <% if is_photographer? %>
+                          <li class="<%= 'active' if request.path == stores_path %>">
+                            <%= link_to "My Studio", studios_path %>
+                          </li>
+                        <% else %>
+                          <li class="<%= 'active' if request.path == new_photographer_path %>">
+                            <%= link_to "Be a Photographer!", new_photographer_path %>
+                          </li>
+                        <% end %>
+
+                        <li class="<%= 'active' if request.path == destroy_user_session_path %>">
+                          <!-- <% if current_user.image_url %>
+                            <%= image_tag current_user.image_url, class: "nav-item round-image-50" %>
+                          <% else %>
+                            <%= image_tag current_user.profile_image, class: "nav-item round-image-50" %>
+                          <% end  %> -->
+                          <%= link_to "#{current_user.name}. Logout", destroy_user_session_path, method: "delete" %>
+                        </li>
+                      <% end %>
                     </ul>
                   </nav>
                 </div>
