@@ -1,13 +1,19 @@
 .album-thumb {
   object-fit: cover;
-  height: 34vw;
+  height: 38vw;
   background-position: center;
   background-size: cover;
 }
 
 .album-thumb-half {
   object-fit: cover;
-  height: 17vw;
+  height: 19vw;
   background-position: center;
   background-size: cover;
+}
+
+.album-list-photographer-name {
+  font-style: italic;
+  font-weight: bold;
+  color: #BBB;
 }
