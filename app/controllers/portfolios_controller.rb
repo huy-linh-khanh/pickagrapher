@@ -6,15 +6,13 @@ class PortfoliosController < ApplicationController
   helper_method :current_photographer
   helper_method :is_bookmarked?
 
-
   def index
     if current_photographer
-      @albums = Portfolio.where(:photographer_id => current_photographer).first.albums
+      @albums = Portfolio.where(photographer_id: current_photographer).first.albums
     else
-      @portfolio = Portfolio.where(:photographer => params[:photographer]).first
-      @albums = Album.where(:portfolio => @portfolio, :category => params[:category])
+      @portfolio = Portfolio.where(photographer: params[:photographer]).first
+      @albums = Album.where(portfolio: @portfolio, category: params[:category])
     end
-
   end
 
   def create
@@ -27,4 +25,6 @@ class PortfoliosController < ApplicationController
     end
   end
 
+  def view_album
+  end
 end

@@ -1,0 +1,33 @@
+<div class="stamford-theme-wrapper under-nav-bar">
+  <div class="container clearfix">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="row">
+          <%= render partial: 'album_thumb', locals: { thumb_type: :t_3_4, image_name: 'image01', col_wrap: true } %>
+          <div class="col-md-4">
+            <%= render partial: 'album_thumb', locals: { thumb_type: :t_1_3, image_name: 'image11', col_wrap: false } %>
+            <%= render partial: 'album_thumb', locals: { thumb_type: :t_1_3, image_name: 'image43', col_wrap: false } %>
+          </div>
+        </div>
+        <div class="row">
+          <%= render partial: 'album_thumb', locals: { thumb_type: :t_1_2, image_name: 'image01', col_wrap: true } %>
+          <%= render partial: 'album_thumb', locals: { thumb_type: :t_1_2, image_name: 'image11', col_wrap: true } %>
+        </div>
+        <div class="row">
+          <%= render partial: 'album_thumb', locals: { thumb_type: :t_1_3, image_name: 'image11', col_wrap: true } %>
+          <%= render partial: 'album_thumb', locals: { thumb_type: :t_1_3, image_name: 'image01', col_wrap: true } %>
+          <%= render partial: 'album_thumb', locals: { thumb_type: :t_1_3, image_name: 'image43', col_wrap: true } %>
+        </div>
+        <div class="row">
+          <%= render partial: 'album_thumb', locals: { thumb_type: :t_1_3, image_name: 'image43', col_wrap: true } %>
+          <%= render partial: 'album_thumb', locals: { thumb_type: :t_1_3, image_name: 'image11', col_wrap: true } %>
+          <%= render partial: 'album_thumb', locals: { thumb_type: :t_1_3, image_name: 'image01', col_wrap: true } %>
+        </div>
+        <div class="col-md-3">
+          <div class="affix">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

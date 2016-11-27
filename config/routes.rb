@@ -32,5 +32,6 @@ Rails.application.routes.draw do
   # get 'bookings' => 'bookings#index'
   # get 'portfolios' => 'portfolios#index'
   post 'portfolio/create' => 'photographers#add_portfolio'
+  get 'portfolios/:id/view_album' => 'portfolios#view_album'
   post 'album/publish' => 'albums#publish'
 end

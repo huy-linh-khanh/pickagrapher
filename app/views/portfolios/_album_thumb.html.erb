@@ -1,0 +1,35 @@
+<% if col_wrap %>
+  <% case thumb_type %>
+  <% when :t_1_3 %>
+    <div class="col-md-4">
+  <% when :t_1_2 %>
+    <div class="col-md-6">
+  <% when :t_3_4 %>
+    <div class="col-md-8">
+  <% else %>
+    <div class="col-md-12">
+  <% end %>
+<% end %>
+
+<% case thumb_type %>
+<% when :t_1_3 %>
+  <div class="thumb-bounding-box1">
+    <div class="portfolio-album-thumb-1-3" style="background-image: url(<%= asset_path(image_name) %>)"></div>
+  </div>
+<% when :t_1_2 %>
+  <div class="thumb-bounding-box1">
+    <div class="portfolio-album-thumb-1-2" style="background-image: url(<%= asset_path(image_name) %>)"></div>
+  </div>
+<% when :t_3_4 %>
+  <div class="thumb-bounding-box1">
+    <div class="portfolio-album-thumb-3-4" style="background-image: url(<%= asset_path(image_name) %>)"></div>
+  </div>
+<% else %>
+  <div class="thumb-bounding-box1">
+    <div class="portfolio-album-thumb" style="background-image: url(<%= asset_path(image_name) %>)"></div>
+  </div>
+<% end %>
+
+<% if col_wrap %>
+    </div>
+<% end %>
