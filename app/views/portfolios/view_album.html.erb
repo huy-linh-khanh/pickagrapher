@@ -23,11 +23,20 @@
           <%= render partial: 'album_thumb', locals: { thumb_type: :t_1_3, image_name: 'image11', col_wrap: true } %>
           <%= render partial: 'album_thumb', locals: { thumb_type: :t_1_3, image_name: 'image01', col_wrap: true } %>
         </div>
-        <div class="col-md-3">
-          <div class="affix">
-            
-          </div>
+      </div>
+      <div class="col-md-3" style="padding-left: 20px;">
+        <div class="affix" style="height: 70vh; background-color: #151517;">
+          <span class="custom-dropdown" style="width: 100%; font-family: Montserrat;">
+            <select style="width: 100%;">
+              <option>WEDDING</option>
+              <option>PORTRAIT</option>
+              <option>INDOOR</option>
+              <option>PRODUCT</option>
+            </select>
+          </span>
+          <%= render partial: 'album_item_thumb', locals: { image_name: 'image01' } %>
         </div>
       </div>
     </div>
   </div>
+</div>
