@@ -1,4 +1,6 @@
 @import "bootstrap";
+@import "bootstrap/glyphicons";
+// @import "glyphicons";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "./template/bootstrap.extension.scss";
@@ -10,6 +12,18 @@
 @import "./template/style_2.scss";
 @import "./template/style_3.scss";
 @import "./template/form-elements.scss";
+@import "./template/studio-bootstrap.scss";
+@import "./template/studio-bootstrap.min.scss";
+@import "./template/studio-bootstrap-table.scss";
+@import "./template/studio-bootstrap-theme.scss";
+@import "./template/studio-bootstrap-theme.min.scss";
+@import "./template/studio-datepicker.scss";
+@import "./template/studio-datepicker3.scss";
+@import "./template/studio-rgba-fallback.scss";
+@import "./template/studio-styles.scss";
+@import "./template/search-common.scss";
+@import "./template/search-index.scss";
+@import "./template/search-main.scss";
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 @import url(https://fonts.googleapis.com/css?family=Inconsolata);
