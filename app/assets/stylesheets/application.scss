@@ -24,6 +24,7 @@
 // @import "./template/search-common.scss";
 // @import "./template/search-index.scss";
 // @import "./template/search-main.scss";
+@import "./template/pickmeup";
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 @import url(https://fonts.googleapis.com/css?family=Inconsolata);
@@ -47,6 +48,19 @@ body {
     overflow: hidden;
     text-align: center;
     img { width: 100% }
+}
+
+.round-image-90 {
+  background-color: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 45px;
+  -moz-border-radius: 45px;
+  -webkit-border-radius: 45px;
+  height: 90px;
+  width: 90px;
+  overflow: hidden;
+  text-align: center;
+  img { width: 100% }
 }
 
 .under-nav-bar {
