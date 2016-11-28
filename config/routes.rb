@@ -18,20 +18,21 @@ Rails.application.routes.draw do
   resources :categories, only: [:new, :create, :update, :show]
   resources :albums, only: [:index, :new, :create, :update, :destroy, :show, :edit]
   resources :stores, only: [:index]
-  resources :bookings, only: [:index]
+  resources :bookings
   resources :portfolios, only: [:index]
-  resources :policies, only: [:index]
-  resources :orders, only: [:index, :new, :create, :show]
+  resources :policies
+  resources :orders
   resources :bookmarks, only: [:index, :create, :destroy]
   resources :authentications
   resources :uploads
   resources :images
   resources :studios
-  resources :prices
 
   # get 'stores' => 'stores#index'
   # get 'bookings' => 'bookings#index'
   # get 'portfolios' => 'portfolios#index'
   post 'portfolio/create' => 'photographers#add_portfolio'
   post 'album/publish' => 'albums#publish'
+  post 'booking/accept' => 'bookings#accept'
+  post 'booking/cancel' => 'bookings#cancel'
 end

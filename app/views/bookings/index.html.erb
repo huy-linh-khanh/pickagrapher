@@ -56,24 +56,38 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Khanh Le</td>
-              <td>Wedding</td>
-              <td>Da nang</td>
-              <td>23-Dec-2017</td>
-              <td>25-Dec-2017</td>
-              <td>In Review</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Linh Linh</td>
-              <td>Wedding</td>
-              <td>Nha Trang</td>
-              <td>05-July-2017</td>
-              <td>07-July-2017</td>
-              <td>Accepted</td>
-            </tr>
+            <% if @orders.count > 0 %>
+              <% @orders.each do |order| %>
+              <% @count = @count + 1 %>
+                <tr>
+                  <th scope="row"><%= @count %></th>
+                  <td><%= order.user.name %></td>
+                  <td><%= order.category.name %></td>
+                  <td><%= order.location.name %></td>
+                  <td><%= order.starts_date %></td>
+                  <td><%= order.ends_date %></td>
+                  <% case order.status %>
+                  <% when "created" %>
+                    <td>
+                      <%= link_to booking_accept_path(:order => order), method: "post" do %>
+                        <button class="btn btn-primary">Accept</button>
+                      <% end %>
+                      <%= link_to booking_cancel_path(:order => order), method: "post" do %>
+                        <button class="btn btn-danger">Cancel</button>
+                      <% end %>
+                    </td>
+                  <% when "accepted" %>
+                    <td>Accepted</td>
+                  <% when "rejected" %>
+                    <td>Canceled</td>
+                  <% end %>
+                </tr>
+              <% end %>
+            <% else %>
+              <tr>
+                <td colspan="7">No matching records found</td>
+              </tr>
+            <% end %>
           </tbody>
         </table>
 
