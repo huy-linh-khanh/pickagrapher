@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 3.0'
 gem 'awesome_print'
 gem 'bootstrap', '~> 4.0.0.alpha5'
+gem 'bootstrap-sass', '3.2.0.1'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
@@ -30,6 +31,8 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'font-awesome-sass'
 gem 'dotenv-rails', groups: [:development, :test], require: 'dotenv/rails-now'
+gem 'bootstrap-glyphicons'
+# gem 'glyphicons-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri

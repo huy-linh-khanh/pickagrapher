@@ -8,10 +8,8 @@ module PhotographersHelper
   end
 
   def current_photographer
-    if current_user
+    if current_user && is_photographer?
       return current_user.photographer
     end
-    # return @photographer if @photographer
-    # @photographer = current_user.photographer
   end
 end

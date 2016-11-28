@@ -2,30 +2,37 @@
   <div class="container clearfix">
     <div class="row">
       <div class="col-md-9">
-        <div class="row">
-          <%= render partial: 'album_thumb', locals: { thumb_type: :t_3_4, image_name: 'image01', col_wrap: true } %>
-          <div class="col-md-4">
-            <%= render partial: 'album_thumb', locals: { thumb_type: :t_1_3, image_name: 'image11', col_wrap: false } %>
-            <%= render partial: 'album_thumb', locals: { thumb_type: :t_1_3, image_name: 'image43', col_wrap: false } %>
+        <div class="row" style="position: relative;">
+          <%= render partial: 'album_thumb', locals: {thumb_type: :full, image_name: 'image11', col_wrap: true} %>
+          <div style="width: 100%; position: absolute; bottom: 0; background-color: rgba(255,255,255,0.8); padding: 1.3em 1.5em 0.8em 1.5em;">
+            <h2>Saigon - Anh yeu em</h2>
+            <p>Phasellus leo ante, posuere in fringilla vitae, pretium at dui. Fusce et neque quis odio gravida auctor velno.</p>
           </div>
         </div>
         <div class="row">
-          <%= render partial: 'album_thumb', locals: { thumb_type: :t_1_2, image_name: 'image01', col_wrap: true } %>
-          <%= render partial: 'album_thumb', locals: { thumb_type: :t_1_2, image_name: 'image11', col_wrap: true } %>
+          <%= render partial: 'album_thumb', locals: {thumb_type: :t_3_4, image_name: 'image01', col_wrap: true} %>
+          <div class="col-md-4">
+            <%= render partial: 'album_thumb', locals: {thumb_type: :t_1_3, image_name: 'image11', col_wrap: false} %>
+            <%= render partial: 'album_thumb', locals: {thumb_type: :t_1_3, image_name: 'image43', col_wrap: false} %>
+          </div>
         </div>
         <div class="row">
-          <%= render partial: 'album_thumb', locals: { thumb_type: :t_1_3, image_name: 'image11', col_wrap: true } %>
-          <%= render partial: 'album_thumb', locals: { thumb_type: :t_1_3, image_name: 'image01', col_wrap: true } %>
-          <%= render partial: 'album_thumb', locals: { thumb_type: :t_1_3, image_name: 'image43', col_wrap: true } %>
+          <%= render partial: 'album_thumb', locals: {thumb_type: :t_1_2, image_name: 'image01', col_wrap: true} %>
+          <%= render partial: 'album_thumb', locals: {thumb_type: :t_1_2, image_name: 'image11', col_wrap: true} %>
         </div>
         <div class="row">
-          <%= render partial: 'album_thumb', locals: { thumb_type: :t_1_3, image_name: 'image43', col_wrap: true } %>
-          <%= render partial: 'album_thumb', locals: { thumb_type: :t_1_3, image_name: 'image11', col_wrap: true } %>
-          <%= render partial: 'album_thumb', locals: { thumb_type: :t_1_3, image_name: 'image01', col_wrap: true } %>
+          <%= render partial: 'album_thumb', locals: {thumb_type: :t_1_3, image_name: 'image11', col_wrap: true} %>
+          <%= render partial: 'album_thumb', locals: {thumb_type: :t_1_3, image_name: 'image01', col_wrap: true} %>
+          <%= render partial: 'album_thumb', locals: {thumb_type: :t_1_3, image_name: 'image43', col_wrap: true} %>
+        </div>
+        <div class="row">
+          <%= render partial: 'album_thumb', locals: {thumb_type: :t_1_3, image_name: 'image43', col_wrap: true} %>
+          <%= render partial: 'album_thumb', locals: {thumb_type: :t_1_3, image_name: 'image11', col_wrap: true} %>
+          <%= render partial: 'album_thumb', locals: {thumb_type: :t_1_3, image_name: 'image01', col_wrap: true} %>
         </div>
       </div>
-      <div class="col-md-3" style="padding-left: 20px;">
-        <div class="affix" style="height: 70vh; background-color: #151517;">
+      <div class="col-md-3" style="padding-left: 40px; position: fixed; right: 5vw;">
+        <div class="affix" style="height: 70vh; background-color: #252527; position: relative;">
           <span class="custom-dropdown" style="width: 100%; font-family: Montserrat;">
             <select style="width: 100%;">
               <option>WEDDING</option>
@@ -34,13 +41,18 @@
               <option>PRODUCT</option>
             </select>
           </span>
-          <%= render partial: 'album_item_thumb', locals: { image_name: 'image01' } %>
-          <%= render partial: 'album_item_thumb', locals: { image_name: 'image01' } %>
-          <%= render partial: 'album_item_thumb', locals: { image_name: 'image01' } %>
-          <%= render partial: 'album_item_thumb', locals: { image_name: 'image01' } %>
-          <%= render partial: 'album_item_thumb', locals: { image_name: 'image01' } %>
-          <%= render partial: 'album_item_thumb', locals: { image_name: 'image01' } %>
-          <%= render partial: 'album_item_thumb', locals: { image_name: 'image01' } %>
+          <div style="padding: 2px 0 2px 0;">
+            <%= render partial: 'album_item_thumb', locals: {image_name: 'image01'} %>
+            <%= render partial: 'album_item_thumb', locals: {image_name: 'image01'} %>
+            <%= render partial: 'album_item_thumb', locals: {image_name: 'image01'} %>
+            <%= render partial: 'album_item_thumb', locals: {image_name: 'image01'} %>
+            <%= render partial: 'album_item_thumb', locals: {image_name: 'image01'} %>
+            <%= render partial: 'album_item_thumb', locals: {image_name: 'image01'} %>
+            <%= render partial: 'album_item_thumb', locals: {image_name: 'image01'} %>
+          </div>
+          <button type="button" style="position: absolute; bottom: 0px; left: 0px; width: 100%; font-family: Montserrat; border-radius: 0; height: 40px;" class="btn btn-danger">BOOK
+            NOW
+          </button>
         </div>
       </div>
     </div>
