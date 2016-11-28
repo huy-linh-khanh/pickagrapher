@@ -2,14 +2,14 @@
   <h2>My Portfolio</h2>
   <br />
   <% if current_photographer %>
-    <%= link_to "Add new Album", new_album_path, class: "btn btn-primary" %>
-  <% else %>
-    <%= link_to "Book now!", new_order_path(:photographer => params[:photographer], :category => params[:category]), class: "btn btn-primary" %>
-  <% end %>
-  <%# if current_photographer != params[:photographer] || !current_photographer %>
-  <% if !is_bookmarked?(params[:photographer]) %>
-    <%= link_to "Add to favorite", bookmarks_path(:photographer => params[:photographer]), method: "post", class: "btn btn-warning" %>
-  <% end %>
+  <%= link_to "Add new Album", new_album_path, class: "btn btn-primary" %>
+<% else %>
+  <%= link_to "Book now!", new_order_path(:photographer => params[:photographer], :category => params[:category]), class: "btn btn-primary" %>
+<% end %>
+<%# if current_photographer != params[:photographer] || !current_photographer %>
+<% if !is_bookmarked?(params[:photographer]) %>
+  <%= link_to "Add to favorite", bookmarks_path(:photographer => params[:photographer]), method: "post", class: "btn btn-warning" %>
+<% end %>
   <hr />
   <% @albums.each do |album| %>
     <div class="card">
@@ -27,10 +27,10 @@
       </ul>
       <div class="card-block">
         <%= link_to "Update", edit_album_path(album), class: "card-link" %>
-        <%= link_to "Delete", album_path(album), method: "delete", class: "card-link" %>
-        <% if !is_published?(album) %>
-          <%= link_to "Publish", album_publish_path(:id => album), method: "post", class: "card-link" %>
-        <% end %>
+  <%= link_to "Delete", album_path(album), method: "delete", class: "card-link" %>
+  <% if !is_published?(album) %>
+    <%= link_to "Publish", album_publish_path(:id => album), method: "post", class: "card-link" %>
+  <% end %>
       </div>
     </div>
     <hr />
@@ -41,7 +41,8 @@
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 <!-- <link href="app/assets/stylesheets/template/studio-datepicker3.css" rel="stylesheet">
 <link href="app/assets/stylesheets/template/studio-styles.css" rel="stylesheet"> -->
-<div class="studio-theme-wrapper">
+<div>
+  <div class="studio-theme-wrapper">
   <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
     <!-- <form role="search">
       <div class="form-group">
@@ -49,7 +50,7 @@
       </div>
     </form> -->
     <ul class="nav menu">
-      <br />
+      <br/>
       <li class="<%= 'active' if request.path == bookings_path %>">
         <%= link_to bookings_path do %>
           <span class="glyphicon glyphicon-shopping-cart"></span> Booking
@@ -70,19 +71,72 @@
       <li><a href="login.html"><span class="glyphicon glyphicon-user"></span> Logout</a></li> -->
     </ul>
   </div><!--/.sidebar-->
+    </div>
 
 
   <div class="col-sm-9 offset-sm-2 col-lg-10 offset-lg-2 main">
-
-
     <div class="row">
-      <div class="col-lg-12">
-        <h1 class="page-header">Portfolio</h1>
+      <div class="col-md-12" style="padding: 0;">
+        <div class="stamford-theme-wrapper" style="margin-top: 110px;">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-9">
+                <div class="row" style="position: relative;">
+                  <%= render partial: 'album_thumb', locals: {thumb_type: :full, image_name: 'image11', col_wrap: true} %>
+                  <div style="width: 100%; position: absolute; bottom: 0; background-color: rgba(255,255,255,0.8); padding: 1.3em 1.5em 0.8em 1.5em;">
+                    <h2>Saigon - Anh yeu em</h2>
+                    <p>Phasellus leo ante, posuere in fringilla vitae, pretium at dui. Fusce et neque quis odio gravida
+                      auctor velno.</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <%= render partial: 'album_thumb', locals: {thumb_type: :t_3_4, image_name: 'image01', col_wrap: true} %>
+                  <div class="col-md-4">
+                    <%= render partial: 'album_thumb', locals: {thumb_type: :t_1_3, image_name: 'image11', col_wrap: false} %>
+                    <%= render partial: 'album_thumb', locals: {thumb_type: :t_1_3, image_name: 'image43', col_wrap: false} %>
+                  </div>
+                </div>
+                <div class="row">
+                  <%= render partial: 'album_thumb', locals: {thumb_type: :t_1_2, image_name: 'image01', col_wrap: true} %>
+                  <%= render partial: 'album_thumb', locals: {thumb_type: :t_1_2, image_name: 'image11', col_wrap: true} %>
+                </div>
+                <div class="row">
+                  <%= render partial: 'album_thumb', locals: {thumb_type: :t_1_3, image_name: 'image11', col_wrap: true} %>
+                  <%= render partial: 'album_thumb', locals: {thumb_type: :t_1_3, image_name: 'image01', col_wrap: true} %>
+                  <%= render partial: 'album_thumb', locals: {thumb_type: :t_1_3, image_name: 'image43', col_wrap: true} %>
+                </div>
+                <div class="row">
+                  <%= render partial: 'album_thumb', locals: {thumb_type: :t_1_3, image_name: 'image43', col_wrap: true} %>
+                  <%= render partial: 'album_thumb', locals: {thumb_type: :t_1_3, image_name: 'image11', col_wrap: true} %>
+                  <%= render partial: 'album_thumb', locals: {thumb_type: :t_1_3, image_name: 'image01', col_wrap: true} %>
+                </div>
+              </div>
+              <div class="col-md-3" style="padding-left: 60px; position: fixed; right: 0;">
+                <div class="affix" style="height: 70vh; background-color: #252527; position: relative;">
+          <span class="custom-dropdown" style="width: 100%; font-family: Montserrat;">
+            <select style="width: 100%;">
+              <option>WEDDING</option>
+              <option>PORTRAIT</option>
+              <option>INDOOR</option>
+              <option>PRODUCT</option>
+            </select>
+          </span>
+                  <div style="padding: 2px 0 2px 0;">
+                    <%= render partial: 'album_item_thumb', locals: {image_name: 'image01'} %>
+                    <%= render partial: 'album_item_thumb', locals: {image_name: 'image01'} %>
+                    <%= render partial: 'album_item_thumb', locals: {image_name: 'image01'} %>
+                    <%= render partial: 'album_item_thumb', locals: {image_name: 'image01'} %>
+                    <%= render partial: 'album_item_thumb', locals: {image_name: 'image01'} %>
+                    <%= render partial: 'album_item_thumb', locals: {image_name: 'image01'} %>
+                    <%= render partial: 'album_item_thumb', locals: {image_name: 'image01'} %>
+                  </div>
+                  <button type="button" style="position: absolute; bottom: 0px; left: 0px; width: 100%; font-family: Montserrat; border-radius: 0; height: 40px;" class="btn btn-danger">NEW ALBUM</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div><!--/.row-->
-
-    
-
-    </div><!--/.row-->
-  </div>	<!--/.main-->
+    </div>
+  </div>
 </div>
