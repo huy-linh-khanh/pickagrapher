@@ -15,7 +15,7 @@
                       <% if user_signed_in? %>
                         <% if is_photographer? %>
                           <li class="<%= 'active' if request.path == studios_path %>">
-                            <%= link_to "My Studio", studios_path %>
+                            <%= link_to "My Studio", portfolios_path %>
                           </li>
                         <% else %>
                           <li>

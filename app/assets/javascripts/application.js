@@ -16,6 +16,7 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree ./template
+//= require bootstrap-datepicker
 
 $(function(){
   $(".upload-image").on("change", function(){
