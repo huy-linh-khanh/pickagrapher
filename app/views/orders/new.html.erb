@@ -7,10 +7,21 @@
     <div class="row">
       <div class="col-md-8">
         <div style="background-color: #151517; padding: 24px 20px 20px 20px;">
-          <%= image_tag(current_user.image_url ? current_user.image_url : current_user.profile_image, class: 'logo nav-item round-image-90') %>
-          <span style="padding-left: 10px;">
-            <h2 style="display: inline-block; color: #FFF;">Tang Tang</h2>
-          </span>
+          <div style="position: relative;">
+            <%= image_tag(current_user.image_url ? current_user.image_url : current_user.profile_image, class: 'logo nav-item round-image-90') %>
+            <span style="padding-left: 10px;">
+              <h2 style="display: inline-block; color: #FFF;">Tang Tang</h2>
+            </span>
+
+            <span style="position: absolute; right: 0; top: 24px;">
+              <ul class="tg-list" style="display: inline;">
+                <li class="tg-list-item" style="display: inline; padding: 0; margin: 0;">
+                  <input id="cb5" type="checkbox" class="tgl tgl-flip"/>
+                  <label data-tg-off="Nope" data-tg-on="Yeah!" for="cb5" class="tgl-btn"></label>
+                </li>
+              </ul>
+            </span>
+          </div>
           <div style="text-align: justify; padding-top: 14px; color: #AAA;">
             Lorem ipsum dolor sit amet, cum mundi posidonium id, sea quidam fuisset cu. Malorum oportere usu ut, an vel debet tantas. Ad vis aliquid adolescens, quod invidunt gloriatur ius te, eu mea sale scribentur. Cu vel similique posidonium. Vix cibo officiis ex. Ex melius alterum maiorum est, per laoreet persecuti ne, facilis noluisse tractatos te vel.
             <br><br>
