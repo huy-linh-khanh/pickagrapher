@@ -1,5 +1,5 @@
 <script type="text/javascript">
-  pickmeup('.pickagrapher-date');
+ pickmeup('.pickagrapher-date');
 </script>
 
 <div class="stamford-theme-wrapper under-nav-bar">
@@ -20,6 +20,10 @@
                   <label data-tg-off="Nope" data-tg-on="Yeah!" for="cb5" class="tgl-btn"></label>
                 </li>
               </ul>
+            </span>
+
+            <span style="position: absolute; right: 100px;; top: 24px;">
+              <%= render partial: 'rating' %>
             </span>
           </div>
           <div style="text-align: justify; padding-top: 14px; color: #AAA;">
@@ -43,62 +47,62 @@
       </div>
       <div class="col-md-4" style="padding-left: 52px; position: fixed; right: 5vw; color: #DDD; font-family: Montserrat;">
         <!-- <div class="affix" style="height: 70vh; background-color: #151517; position: relative; padding: 10px 18px 0 18px;"> -->
-          <%= render partial: "payment" %>
-          <!-- <%= form_for Order.new do |f| %>
-            <%= f.hidden_field :photographer_id, :value => params[:photographer] %>
-            <%= f.hidden_field :category_id, :value => params[:category] %>
+        <%= render partial: "payment" %>
+        <!-- <%= form_for Order.new do |f| %>
+             <%= f.hidden_field :photographer_id, :value => params[:photographer] %>
+             <%= f.hidden_field :category_id, :value => params[:category] %>
 
-            <table style="width: 100%;">
-              <tr>
-                <td>Start Date:</td>
-                <td>
-                  <div style="width: 100%;" align="right">
-                    <%= f.date_field :starts_date, :order => [:day, :month, :year] %>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>End Date:</td>
-                <td>
-                  <div style="width: 100%;" align="right">
-                    <%= f.date_field :ends_date, :order => [:day, :month, :year] %>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>Where to take:</td>
-                <td class="order-right-align"><%= f.select :location_id, Location.all.collect { |location| [location.name, location.id] }, prompt: "Select a location" %></td>
-              </tr>
-              <tr>
-                <td>Category:</td>
-                <td class="order-right-align"></td>
-              </tr>
-              <tr>
-                <td>Duration:</td>
-                <td class="order-right-align"></td>
-              </tr>
-              <tr>
-                <td>Travel charge:</td>
-                <td class="order-right-align"></td>
-              </tr>
-            </table>
+             <table style="width: 100%;">
+             <tr>
+             <td>Start Date:</td>
+             <td>
+             <div style="width: 100%;" align="right">
+             <%= f.date_field :starts_date, :order => [:day, :month, :year] %>
+             </div>
+             </td>
+             </tr>
+             <tr>
+             <td>End Date:</td>
+             <td>
+             <div style="width: 100%;" align="right">
+             <%= f.date_field :ends_date, :order => [:day, :month, :year] %>
+             </div>
+             </td>
+             </tr>
+             <tr>
+             <td>Where to take:</td>
+             <td class="order-right-align"><%= f.select :location_id, Location.all.collect { |location| [location.name, location.id] }, prompt: "Select a location" %></td>
+             </tr>
+             <tr>
+             <td>Category:</td>
+             <td class="order-right-align"></td>
+             </tr>
+             <tr>
+             <td>Duration:</td>
+             <td class="order-right-align"></td>
+             </tr>
+             <tr>
+             <td>Travel charge:</td>
+             <td class="order-right-align"></td>
+             </tr>
+             </table>
 
-            <hr>
+             <hr>
 
-            <table>
-              <tr>
-                <td>Total:</td>
-                <td class="order-right-align"></td>
-              </tr>
-              <tr>
-                <td>*Included tax</td>
-              </tr>
-            </table>
+             <table>
+             <tr>
+             <td>Total:</td>
+             <td class="order-right-align"></td>
+             </tr>
+             <tr>
+             <td>*Included tax</td>
+             </tr>
+             </table>
 
-            <button onclick="alert('Your order is placed successfully!')" type="button" style="position: absolute; bottom: 0px; left: 0px; width: 100%; font-family: Montserrat; border-radius: 0; height: 40px;" class="btn btn-danger">BOOK
-              NOW
-            </button>
-          <% end %> -->
+             <button onclick="alert('Your order is placed successfully!')" type="button" style="position: absolute; bottom: 0px; left: 0px; width: 100%; font-family: Montserrat; border-radius: 0; height: 40px;" class="btn btn-danger">BOOK
+             NOW
+             </button>
+             <% end %> -->
         <!-- </div> -->
       </div>
     </div>
