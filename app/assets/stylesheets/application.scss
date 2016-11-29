@@ -21,6 +21,11 @@
 @import "./template/studio-datepicker3.scss";
 @import "./template/studio-rgba-fallback.scss";
 @import "./template/studio-styles.scss";
+@import "./template/search-agoda-entry.scss";
+@import "./template/search-agoda-experiment-desk.scss";
+@import "./template/search-agoda-index.scss";
+@import "./template/search-agoda-layout-58fc.scss";
+@import "./template/search-agoda-layout-c093.scss";
 // @import "./template/search-common.scss";
 // @import "./template/search-index.scss";
 // @import "./template/search-main.scss";
@@ -32,6 +37,10 @@
 @import url(https://fonts.googleapis.com/css?family=Lora);
 @import url(https://fonts.googleapis.com/css?family=Oswald);
 @import url(https://fonts.googleapis.com/css?family=Roboto);
+
+/*
+ *= require bootstrap-datepicker
+ */
 
 body {
   background-color: #000;
