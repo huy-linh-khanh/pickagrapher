@@ -17,14 +17,14 @@
           <dl class="form-group">
             <dt style="font-family: sans-serif;">Start date:</dt>
             <dd style="font-family: sans-serif;">
-              <input type="text" class="form-control oneline-checkin checkin-input date-input hasDatepicker" data-provide='datepicker' value="24-11-2016">
+              <input type="text" class="form-control oneline-checkin checkin-input date-input hasDatepicker" data-provide='datepicker' value="23-12-2016">
               <i class="glyphicon glyphicon-calendar"></i>
             </dd>
           </dl>
           <dl class="form-group">
             <dt style="font-family: sans-serif;">End date:</dt>
             <dd style="font-family: sans-serif;">
-              <input type="text" class="form-control oneline-checkout checkout-input date-input hasDatepicker" data-provide='datepicker' data-selenium="checkOutBox" data-date="2016-12-09">
+              <input type="text" class="form-control oneline-checkout checkout-input date-input hasDatepicker" data-provide='datepicker' value="25-12-2016">
               <i class="glyphicon glyphicon-calendar"></i>
             </dd>
           </dl>
@@ -39,6 +39,7 @@
           <dl class="form-actions">
             <dt>&nbsp;</dt>
             <dd>
+              <%= link_to albums_path do %>
               <button type="submit" class="btn btn-primary search-button oneline-search-button" data-selenium="searchButton" data-warning="Please enter the name of a country, city, airport, neighborhood, landmark, or property to proceed.">
                 <span class="js-search-button-unclicked-label">
                   Search
@@ -47,6 +48,7 @@
                   <i class="submit-progress-spinner"></i>
                 </span>
               </button>
+              <% end %>
             </dd>
           </dl>
         </div>
