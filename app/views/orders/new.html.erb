@@ -1,23 +1,33 @@
 <script type="text/javascript">
-  pickmeup('.pickagrapher-date');
+ pickmeup('.pickagrapher-date');
 </script>
 
 <div class="stamford-theme-wrapper under-nav-bar">
   <div class="container clearfix">
     <div class="row">
-      <div class="col-md-8" style="background-color: #151517; padding: 24px 20px 20px 20px;">
-        <%= image_tag(current_user.image_url ? current_user.image_url : current_user.profile_image, class: 'logo nav-item round-image-90') %>
-        <span style="padding-left: 10px;">
-          <h2 style="display: inline-block; color: #FFF;">Tang Tang</h2>
-        </span>
-        <div style="text-align: justify; padding-top: 14px; color: #AAA;">
-          Lorem ipsum dolor sit amet, cum mundi posidonium id, sea quidam fuisset cu. Malorum oportere usu ut, an vel debet tantas. Ad vis aliquid adolescens, quod invidunt gloriatur ius te, eu mea sale scribentur. Cu vel similique posidonium. Vix cibo officiis ex. Ex melius alterum maiorum est, per laoreet persecuti ne, facilis noluisse tractatos te vel.
-          <br><br>
-          Fee: <span style="color: #FFF;">$2000</span> / <span style="color: #FFF;">day</span><br>
-          Travel charge: <span style="color: #FFF;">$100</span> / <span style="color: #FFF;">day</span><br>
-          Not include hotel – meals – travel fee. Free in cancellation<span style="color: #E4C35C;">*</span>.
-          <br><br>
-          <i style="color: #E4C35C;">(*) Available to cancel before 3 days</i>
+      <div class="col-md-8">
+        <div style="background-color: #151517; padding: 24px 20px 20px 20px;">
+          <%= image_tag(current_user.image_url ? current_user.image_url : current_user.profile_image, class: 'logo nav-item round-image-90') %>
+          <span style="padding-left: 10px;">
+            <h2 style="display: inline-block; color: #FFF;">Tang Tang</h2>
+          </span>
+          <div style="text-align: justify; padding-top: 14px; color: #AAA;">
+            Lorem ipsum dolor sit amet, cum mundi posidonium id, sea quidam fuisset cu. Malorum oportere usu ut, an vel debet tantas. Ad vis aliquid adolescens, quod invidunt gloriatur ius te, eu mea sale scribentur. Cu vel similique posidonium. Vix cibo officiis ex. Ex melius alterum maiorum est, per laoreet persecuti ne, facilis noluisse tractatos te vel.
+            <br><br>
+            Fee: <span style="color: #FFF;">$2000</span> / <span style="color: #FFF;">day</span><br>
+            Travel charge: <span style="color: #FFF;">$100</span> / <span style="color: #FFF;">day</span><br>
+            Not include hotel – meals – travel fee. Free in cancellation<span style="color: #E4C35C;">*</span>.
+            <br><br>
+            <i style="color: #E4C35C;">(*) Available to cancel before 3 days</i>
+          </div>
+        </div>
+        <div style="margin-top: 11px;">
+          <%= render partial: 'comment', locals: { user_name: 'ThaoMai', user_content: 'The best photographer - ever!' } %>
+          <%= render partial: 'comment', locals: { user_name: 'Khanh Le', user_content: 'Reliable & nice photographer. Will do business again!' } %>
+          <%= render partial: 'comment', locals: { user_name: 'LilyLinh', user_content: 'Good bang for the buck.' } %>
+          <%= render partial: 'comment', locals: { user_name: 'Huy.Pham', user_content: '+1' } %>
+          <%= render partial: 'comment', locals: { user_name: 'Mimi', user_content: 'Vote up!' } %>
+          <%= render partial: 'comment', locals: { user_name: 'ThaoMai', user_content: 'Keep up your good work!' } %>
         </div>
       </div>
       <div class="col-md-4" style="padding-left: 52px; position: fixed; right: 5vw; color: #DDD; font-family: Montserrat;">
