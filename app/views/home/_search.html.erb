@@ -1,70 +1,65 @@
 <div class="search-theme-wrapper">
-
-    <!-- <h1 id="hero-banner-header1" data-selenium="hero-banner-h1">experience [ <span id="hero-banner-rolling-text" style="opacity: 1;">Agoda</span> ]</h1>
-    <h2 id="hero-banner-header2" data-selenium="hero-banner-h2">1,075,000+ vacation rentals and hotels worldwide</h2> -->
-    <div id="hero-banner-hosted">
-      <ul id="hero-banner-tab-nav" class="ag-tab-nav clearfix">
-        <li class="active"><a href="#tab-hotel" data-toggle="tab" data-tab="hotel">Photographers</a></li>
-        <!-- <li class=""><a href="#tab-flight" data-toggle="tab" data-tab="flight">Flights</a></li> -->
-      </ul>
-      <div class="tab-content">
-        <div id="tab-hotel" class="tab-pane active">
-
-          <div id="oneline-searchbox" class="oneline-searchbox" data-selenium="searchBox">
-            <dl class="form-group">
-              <dt>Where would you like to go?</dt>
-              <dd>
-                <%= select_tag :location, options_for_select(@locations.collect{|location| [location.name, location.id] }), class: "form-control text-editor oneline-text-editor" %>
-                <!-- <input type="text" class="form-control text-editor oneline-text-editor" placeholder="Enter a location, property name, or landmark" data-selenium="textInput"> -->
-                <i class="icon icon-clear close-autocomplete"></i>
-              </dd>
-            </dl>
-            <dl class="form-group">
-              <dt>Start date:</dt>
-              <dd>
-                <input type="text" class="form-control oneline-checkin checkin-input date-input hasDatepicker" data-provide='datepicker' value="24-11-2016">
-                <i class="glyphicon glyphicon-calendar"></i>
-              </dd>
-            </dl>
-            <dl class="form-group">
-              <dt>End date:</dt>
-              <dd>
-                <input type="text" class="form-control oneline-checkout checkout-input date-input hasDatepicker" data-provide='datepicker' data-selenium="checkOutBox" data-date="2016-12-09">
-                <i class="glyphicon glyphicon-calendar"></i>
-              </dd>
-            </dl>
-            <dl class="form-group">
-              <dt>Category:</dt>
-              <dd>
-                <%= select_tag :category, options_for_select(@categories.collect{|category| [category.name, category.id] }), class: "form-control oneline-guests guest-search" %>
-                <!-- <input type="text" class="form-control oneline-guests guest-search"> -->
-                <i class="icon icon-dropdown-arrow"></i>
-              </dd>
-            </dl>
-            <dl class="form-actions">
-              <dt>&nbsp;</dt>
-              <dd>
-                <button type="submit" class="btn btn-primary search-button oneline-search-button" data-selenium="searchButton" data-warning="Please enter the name of a country, city, airport, neighborhood, landmark, or property to proceed.">
-                  <span class="js-search-button-unclicked-label">
-                    Search
-                  </span>
-                  <span class="js-search-button-clicked-label search-button-clicked-label">
-                    <i class="submit-progress-spinner"></i>
-                  </span>
-                </button>
-              </dd>
-            </dl>
-          </div>
+  <div id="hero-banner-hosted">
+    <ul id="hero-banner-tab-nav" class="ag-tab-nav clearfix">
+      <li class="active"><a href="#tab-hotel" data-toggle="tab" data-tab="hotel" style="font-family: sans-serif;">Pick a Photographer</a></li>
+    </ul>
+    <div class="tab-content">
+      <div id="tab-hotel" class="tab-pane active">
+        <div id="oneline-searchbox" class="oneline-searchbox" data-selenium="searchBox">
+          <dl class="form-group">
+            <dt style="font-family: sans-serif;">Where would you like to go?</dt>
+            <dd style="font-family: sans-serif;">
+              <%= select_tag :location, options_for_select(@locations.collect{|location| [location.name, location.id] }), class: "form-control text-editor oneline-text-editor" %>
+              <!-- <input type="text" class="form-control text-editor oneline-text-editor" placeholder="Enter a location, property name, or landmark" data-selenium="textInput"> -->
+              <i class="icon icon-clear close-autocomplete"></i>
+            </dd>
+          </dl>
+          <dl class="form-group">
+            <dt style="font-family: sans-serif;">Start date:</dt>
+            <dd style="font-family: sans-serif;">
+              <input type="text" class="form-control oneline-checkin checkin-input date-input hasDatepicker" data-provide='datepicker' value="24-11-2016">
+              <i class="glyphicon glyphicon-calendar"></i>
+            </dd>
+          </dl>
+          <dl class="form-group">
+            <dt style="font-family: sans-serif;">End date:</dt>
+            <dd style="font-family: sans-serif;">
+              <input type="text" class="form-control oneline-checkout checkout-input date-input hasDatepicker" data-provide='datepicker' data-selenium="checkOutBox" data-date="2016-12-09">
+              <i class="glyphicon glyphicon-calendar"></i>
+            </dd>
+          </dl>
+          <dl class="form-group">
+            <dt style="font-family: sans-serif;">Category:</dt>
+            <dd style="font-family: sans-serif;">
+              <%= select_tag :category, options_for_select(@categories.collect{|category| [category.name, category.id] }), class: "form-control oneline-guests guest-search" %>
+              <!-- <input type="text" class="form-control oneline-guests guest-search"> -->
+              <i class="icon icon-dropdown-arrow"></i>
+            </dd>
+          </dl>
+          <dl class="form-actions">
+            <dt>&nbsp;</dt>
+            <dd>
+              <button type="submit" class="btn btn-primary search-button oneline-search-button" data-selenium="searchButton" data-warning="Please enter the name of a country, city, airport, neighborhood, landmark, or property to proceed.">
+                <span class="js-search-button-unclicked-label">
+                  Search
+                </span>
+                <span class="js-search-button-clicked-label search-button-clicked-label">
+                  <i class="submit-progress-spinner"></i>
+                </span>
+              </button>
+            </dd>
+          </dl>
         </div>
       </div>
     </div>
+  </div>
 
 </div>
 <script>
-$('.datepicker').datepicker({
-  format: "yyyy-mm-dd",
-  todayHighlight: true,
-  todayBtn: 'linked',
-  autoclose: true
-});
+ $('.datepicker').datepicker({
+   format: "yyyy-mm-dd",
+   todayHighlight: true,
+   todayBtn: 'linked',
+   autoclose: true
+ });
 </script>

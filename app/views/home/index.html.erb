@@ -1,7 +1,7 @@
 <!-- Video Background -->
 <div class="modesto-theme-wrapper">
   <div class="fonts-8 loaded">
-    <div class="page-height" style="height: 703px; min-height: 703px;">
+    <div class="page-height" style="height: 703px; min-height: 703px; position: relative;">
       <div class="full-size video-wrapper">
         <%= video_tag("home_video.mp4", autoplay: true, loop: true, muted: true) %>
       </div>
@@ -18,32 +18,17 @@
           </div>
         </div>
       </div>
-      <div class="scroll-button style-3 light hidden-xs"></div>
-    </div>
-  </div>
-</div>
 
-
-<div class="row">
-  <br />
-  <br />
-  <br />
-  <br />
-  <div class="col-sm-1">
-  </div>
-  <div class="col-sm-10">
-    <div class="row">
-      <div class="col-sm-1"></div>
-      <div class="col-sm-9">
-        <%= render partial: 'search' %>
+      <div class="container" style="margin-top: 80px; position: absolute; bottom: 2vw; width: 90%; margin-left: 5%;">
+        <div class="row">
+          <div class="col-md-12">
+            <%= render partial: 'search' %>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-2"></div>
     </div>
   </div>
-  <div class="col-sm-1"></div>
 </div>
-
-
 
 <div class="modesto-theme-wrapper">
   <div class="fonts-7 loaded">
@@ -52,7 +37,7 @@
         <div class="empty-space col-xs-b55 col-sm-b70"></div>
         <div class="row">
           <div class="col-md-8 offset-md-2 text-center" style="margin-left: 18%">
-            <div class="h4"><b style="color: #EEE">PICK A PHOTOGRAPHER FOR</b></div>
+            <div class="h4"><b style="color: #EEE">CHECKOUT A CATEGORY</b></div>
           </div>
         </div>
         <div class="empty-space col-xs-b55 col-sm-b70"></div>
