@@ -7,7 +7,7 @@
       <div id="tab-hotel" class="tab-pane active">
         <div id="oneline-searchbox" class="oneline-searchbox" data-selenium="searchBox">
           <dl class="form-group">
-            <dt style="font-family: sans-serif;">Where would you like to go?</dt>
+            <dt style="font-family: sans-serif;">Where will the shoot take place?</dt>
             <dd style="font-family: sans-serif;">
               <%= select_tag :location, options_for_select(@locations.collect{|location| [location.name, location.id] }), class: "form-control text-editor oneline-text-editor" %>
               <!-- <input type="text" class="form-control text-editor oneline-text-editor" placeholder="Enter a location, property name, or landmark" data-selenium="textInput"> -->

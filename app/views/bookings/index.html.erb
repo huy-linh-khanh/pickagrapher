@@ -1,28 +1,21 @@
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-<!-- <link href="app/assets/stylesheets/template/studio-datepicker3.css" rel="stylesheet">
-<link href="app/assets/stylesheets/template/studio-styles.css" rel="stylesheet"> -->
 <div class="studio-theme-wrapper">
-  <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-    <!-- <form role="search">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search">
-      </div>
-    </form> -->
+  <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar" style="padding-top: 18px;">
     <ul class="nav menu">
       <br />
       <li class="<%= 'active' if request.path == bookings_path %>">
         <%= link_to bookings_path do %>
-          <span class="glyphicon glyphicon-shopping-cart"></span> Booking
+        <span class="glyphicon glyphicon-shopping-cart"></span> Booking
         <% end %>
       </li>
       <li class="<%= 'active' if request.path == portfolios_path %>">
         <%= link_to portfolios_path do %>
-          <span class="glyphicon glyphicon-picture"></span> Portfolio
+        <span class="glyphicon glyphicon-picture"></span> Portfolio
         <% end %>
       </li>
       <li class="<%= 'active' if request.path == policies_path %>">
         <%= link_to policies_path do %>
-          <span class="glyphicon glyphicon-euro"></span> Policies
+        <span class="glyphicon glyphicon-euro"></span> Policies
         <% end %>
       </li>
 
@@ -42,7 +35,7 @@
     </div><!--/.row-->
 
     <div class="row">
-			<div class="col-lg-12">
+      <div class="col-lg-12">
         <table class="table table-sm table-inverse">
           <thead>
             <tr>
@@ -57,42 +50,42 @@
           </thead>
           <tbody>
             <% if @orders.count > 0 %>
-              <% @orders.each do |order| %>
-              <% @count = @count + 1 %>
-                <tr>
-                  <th scope="row"><%= @count %></th>
-                  <td><%= order.user.name %></td>
-                  <td><%= order.category.name %></td>
-                  <td><%= order.location.name %></td>
-                  <td><%= order.starts_date %></td>
-                  <td><%= order.ends_date %></td>
-                  <% case order.status %>
-                  <% when "created" %>
-                    <td>
-                      <%= link_to booking_accept_path(:order => order), method: "post" do %>
-                        <button class="btn btn-primary">Accept</button>
-                      <% end %>
-                      <%= link_to booking_cancel_path(:order => order), method: "post" do %>
-                        <button class="btn btn-danger">Cancel</button>
-                      <% end %>
-                    </td>
-                  <% when "accepted" %>
-                    <td>Accepted</td>
-                  <% when "rejected" %>
-                    <td>Canceled</td>
-                  <% end %>
-                </tr>
+            <% @orders.each do |order| %>
+            <% @count = @count + 1 %>
+            <tr>
+              <th scope="row"><%= @count %></th>
+              <td><%= order.user.name %></td>
+              <td><%= order.category.name %></td>
+              <td><%= order.location.name %></td>
+              <td><%= order.starts_date %></td>
+              <td><%= order.ends_date %></td>
+              <% case order.status %>
+              <% when "created" %>
+              <td>
+                <%= link_to booking_accept_path(:order => order), method: "post" do %>
+                <button class="btn btn-primary">Accept</button>
+                <% end %>
+                <%= link_to booking_cancel_path(:order => order), method: "post" do %>
+                <button class="btn btn-danger">Cancel</button>
+                <% end %>
+              </td>
+              <% when "accepted" %>
+              <td>Accepted</td>
+              <% when "rejected" %>
+              <td>Canceled</td>
               <% end %>
+            </tr>
+            <% end %>
             <% else %>
-              <tr>
-                <td colspan="7">No matching records found</td>
-              </tr>
+            <tr>
+              <td colspan="7">No matching records found</td>
+            </tr>
             <% end %>
           </tbody>
         </table>
 
-			</div>
-		</div><!--/.row-->
+      </div>
+    </div><!--/.row-->
 
   </div>	<!--/.main-->
 </div>

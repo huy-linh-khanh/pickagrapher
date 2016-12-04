@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <h2>Add Album</h2>
   <br />
   <div class="form">
@@ -10,4 +10,108 @@
     </div>
     <% end %>
   </div>
+</div> -->
+
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<!-- <link href="app/assets/stylesheets/template/studio-datepicker3.css" rel="stylesheet">
+<link href="app/assets/stylesheets/template/studio-styles.css" rel="stylesheet"> -->
+<div>
+  <div class="studio-theme-wrapper">
+  <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar" style="padding-top: 18px;">
+    <!-- <form role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+    </form> -->
+    <ul class="nav menu">
+      <br/>
+      <li class="<%= 'active' if request.path == bookings_path %>">
+        <%= link_to bookings_path do %>
+          <span class="glyphicon glyphicon-shopping-cart"></span> Booking
+        <% end %>
+      </li>
+      <li class="<%= 'active' if (request.path == portfolios_path || request.path == new_album_path) %>">
+        <%= link_to portfolios_path do %>
+          <span class="glyphicon glyphicon-picture"></span> Portfolio
+        <% end %>
+      </li>
+      <li class="<%= 'active' if request.path == policies_path %>">
+        <%= link_to policies_path do %>
+          <span class="glyphicon glyphicon-euro"></span> Policies
+        <% end %>
+      </li>
+
+      <!-- <li role="presentation" class="divider"></li>
+      <li><a href="login.html"><span class="glyphicon glyphicon-user"></span> Logout</a></li> -->
+    </ul>
+  </div><!--/.sidebar-->
+
+  <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+
+
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Add album</h1>
+			</div>
+		</div><!--/.row-->
+
+
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<!-- <div class="panel-heading">Form Elements</div> -->
+					<div class="panel-body">
+						<div class="col-md-6">
+							<form role="form">
+
+								<div class="form-group">
+									<label>Album name</label>
+									<input class="form-control" placeholder="">
+								</div>
+
+                <div class="form-group">
+									<label>Description</label>
+									<textarea class="form-control" rows="3"></textarea>
+								</div>
+
+                <div class="form-group">
+									<label>Category</label>
+									<select class="form-control">
+										<option>Wedding</option>
+										<option>Fashion</option>
+										<option>Food</option>
+										<option>Interior</option>
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label>Add images</label>
+									<input type="file">
+									 <!-- <p class="help-block">Example block-level help text here.</p> -->
+								</div>
+
+                <div class="col-md-7">
+
+                </div>
+                <div class="col-md-5">
+                  <button type="submit" class="btn btn-primary">Upload</button>
+                  <button type="reset" class="btn btn-default">Cancel</button>
+                </div>
+
+							</div>
+
+
+							<div class="col-md-6">
+                <!-- Show image here -->
+							</div>
+						</form>
+					</div>
+				</div>
+			</div><!-- /.col-->
+		</div><!-- /.row -->
+
+	</div><!--/.main-->
+
+    </div>
+
 </div>
