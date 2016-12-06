@@ -82,10 +82,22 @@
 </div>
 
 <script type="text/javascript">
+ function filter_forbidden_pattern(x) {
+   return Array(x.length).join("█");
+ }
+
  $("#chat-message-field").keypress(function (e) {
    var key = e.which;
    if (key == 13) {
+     var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+     var phoneNoPattern = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
      var someText = $('#chat-message-field').val();
+     var patterns = [emailPattern, phoneNoPattern];
+     patterns.forEach(function (pattern) {
+       someText = someText.replace(pattern, filter_forbidden_pattern);
+     });
+
      $('#chat-message-field').val('')
      var newDiv = $("<li>", { "class": "conversation__msg cf" }).append($("<span>", { "class": "right" }).append(someText));
      $("ul.conversation__wrap").append(newDiv);
@@ -93,7 +105,7 @@
  });
 
  $('.js-trigger').on('click', function() {
-   $('html').toggleClass('show-me') 
+   $('html').toggleClass('show-me')
  });
 
  $('.conversation__header').on('click', function() {
