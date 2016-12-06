@@ -43,7 +43,7 @@
 <link href="app/assets/stylesheets/template/studio-styles.css" rel="stylesheet"> -->
 <div>
   <div class="studio-theme-wrapper">
-  <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+  <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar" style="padding-top: 18px;">
     <!-- <form role="search">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Search">
@@ -125,7 +125,9 @@
                     <%= render partial: 'album_item_thumb', locals: {image_name: 'SoiPhotography-Loc-Ha-16', album_name: 'Đà Lạt mộng mơ' } %>
                     <%= render partial: 'album_item_thumb', locals: {image_name: 'SoiPhotography-Nhi-Long2', album_name: 'Sồi - Ngân Khánh' } %>
                   </div>
+                  <%= link_to new_album_path do %>
                   <button type="button" style="position: absolute; bottom: 0px; left: 0px; width: 100%; font-family: Montserrat; border-radius: 0; height: 40px;" class="btn btn-danger">NEW ALBUM</button>
+                  <% end %>
                 </div>
               </div>
             </div>

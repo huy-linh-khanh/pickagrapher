@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <h1>My Booking</h1>
   <% if is_photographer? %>
     <% @orders.each do |order| %>
@@ -27,13 +27,65 @@
       </div>
     <% end %>
   <% end %>
+</div> -->
 
+
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<!-- <link href="app/assets/stylesheets/template/studio-datepicker3.css" rel="stylesheet">
+<link href="app/assets/stylesheets/template/studio-styles.css" rel="stylesheet"> -->
+<div class="studio-theme-wrapper" style="margin-left:60px;margin-right:60px">
+
+
+  <div class="col-sm-12 main">
+
+
+    <div class="row">
+      <br />
+      <br />
+      <div class="col-lg-12">
+        <h1 class="page-header">My Bookings</h1>
+      </div>
+    </div><!--/.row-->
+
+    <div class="row">
+			<div class="col-lg-12">
+        <table class="table table-sm table-inverse">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Photographer</th>
+              <th>Category</th>
+              <th>Location</th>
+              <th>From</th>
+              <th>To</th>
+              <th>Total price</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Tang Tang</td>
+              <td>Wedding</td>
+              <td>Saigon</td>
+              <td>23-Dec-2016</td>
+              <td>25-Dec-2016</td>
+              <td>đ44,000,000</td>
+              <td>Accepted</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Bite Studio</td>
+              <td>Food Photographer</td>
+              <td>Saigon</td>
+              <td>01-Jul-2016</td>
+              <td>01-Jul-2016</td>
+              <td>đ15,000,000</td>
+              <td>Finished</td>
+            </tr>
+          </tbody>
+        </table>
+			</div>
+		</div><!--/.row-->
+  </div>	<!--/.main-->
 </div>
-
-<!-- t.date     "starts_date"
-t.date     "ends_date"
-t.datetime "create_time"
-t.integer  "user_id"
-t.integer  "photographer_id"
-t.integer  "status",          default: 0
-t.integer  "location_id" -->

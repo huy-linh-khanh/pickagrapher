@@ -2,12 +2,7 @@
 <!-- <link href="app/assets/stylesheets/template/studio-datepicker3.css" rel="stylesheet">
 <link href="app/assets/stylesheets/template/studio-styles.css" rel="stylesheet"> -->
 <div class="studio-theme-wrapper">
-  <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-    <!-- <form role="search">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search">
-      </div>
-    </form> -->
+  <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar" style="padding-top: 18px;">
     <ul class="nav menu">
       <br />
       <li class="<%= 'active' if request.path == bookings_path %>">
@@ -26,10 +21,8 @@
         <% end %>
       </li>
 
-      <!-- <li role="presentation" class="divider"></li>
-      <li><a href="login.html"><span class="glyphicon glyphicon-user"></span> Logout</a></li> -->
     </ul>
-  </div><!--/.sidebar-->
+  </div>
 
   <div class="col-sm-9 offset-sm-2 col-lg-10 offset-lg-2 main">
 
@@ -40,7 +33,6 @@
     </div><!--/.row-->
 
     <% @my_policies.each do |policy| %>
-    <%# @policy = policy%>
       <%= form_for policy, :url => policy_path(policy), :method => "put", class: "role" do |f| %>
         <div class="row">
           <div class="col-lg-12">

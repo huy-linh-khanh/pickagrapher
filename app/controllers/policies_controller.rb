@@ -23,7 +23,6 @@ class PoliciesController < ApplicationController
     my_policies.each do |policy|
       return true if policy.category == category
     end
-    raise
     return false
   end
 
