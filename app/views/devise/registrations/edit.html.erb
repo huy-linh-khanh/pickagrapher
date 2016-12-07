@@ -16,7 +16,6 @@
           <div class="panel-body">
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, :multipart => true }) do |f| %>
               <div class="col-md-6">
-                <!-- <form role="form"> -->
 
                   <div class="form-group">
                     <%= f.label "Name" %><br />
@@ -46,7 +45,6 @@
                     <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
                   </div>
 
-                <!-- </form> -->
               </div>
 
               <div class="col-md-6">

@@ -10,6 +10,7 @@ class PhotographersController < ApplicationController
     if @photographer.save
        add_portfolio
     else
+      raise
       redirect_to :back
     end
   end
