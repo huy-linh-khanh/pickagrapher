@@ -1,7 +1,7 @@
 class PhotographersController < ApplicationController
 
   def new
-
+    @photographer = Photographer.new
   end
 
   def create

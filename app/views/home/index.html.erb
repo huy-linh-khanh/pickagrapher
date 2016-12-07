@@ -52,12 +52,12 @@
     <div id="content-block">
       <div class="wide-container-fluid">
         <div class="row">
-          <%= render partial: 'category_img_link', locals: { category_name: 'WEDDING', image_name: 'SoiPhotography-NganKhoa-fineart29.jpg' , cat_link: albums_path } %>
-          <%= render partial: 'category_img_link', locals: { category_name: 'FASHION', image_name: '6601122829_0bbab0196f_o.jpg', cat_link: albums_path } %>
+          <%= render partial: 'category_img_link', locals: { category_name: 'WEDDING', image_name: 'SoiPhotography-NganKhoa-fineart29.jpg' , cat_link: albums_path(:category => "WEDDING") } %>
+          <%= render partial: 'category_img_link', locals: { category_name: 'FASHION', image_name: '6601122829_0bbab0196f_o.jpg', cat_link: albums_path(:category => "FASHION") } %>
         </div>
         <div class="row">
-          <%= render partial: 'category_img_link', locals: { category_name: 'INTERIOR', image_name: 'I006_interior_living.jpg', cat_link: albums_path } %>
-          <%= render partial: 'category_img_link', locals: { category_name: 'FOOD', image_name: 'F059_food_shot_ham_burger.jpg', cat_link: albums_path } %>
+          <%= render partial: 'category_img_link', locals: { category_name: 'INTERIOR', image_name: 'I006_interior_living.jpg', cat_link: albums_path(:category => "INTERIOR") } %>
+          <%= render partial: 'category_img_link', locals: { category_name: 'FOOD', image_name: 'F059_food_shot_ham_burger.jpg', cat_link: albums_path(:category => "FOOD") } %>
         </div>
       </div>
     </div>

@@ -1,26 +1,43 @@
-<div class="form-group">
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-</div>
-<div class="form-group">
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-</div>
-<div class="form-group">
-  <%= f.label :category_id %>
-  <%= f.select :category_id, Category.all.collect { |category| [category.name, category.id] }, prompt: "Select a category" %>
-</div>
-<% if @album.images %>
-  <% @album.images.each do |image| %>
-    <%= image_tag(image.url_url(:medium)) %>
-    <%= link_to "Delete", image_path(image), method: "delete", class: "btn btn-primary" %>
-    <hr />
-  <% end %>
-<% end %>
-<div class="form-group">
-  <%= f.label "Images" %>
-  <%= file_field_tag "url[]", type: :file, multiple: true, class: "upload-image" %>
-</div>
-<div id="preview">
+<div class="col-md-6">
+  <div class="form-group">
+    <%= f.label "Album name" %>
+    <%= f.text_field :name, class: "form-control", placeholder: @album.name %>
+  </div>
 
+  <div class="form-group">
+    <%= f.label "Description" %>
+    <%= f.text_area :description, rows: "3", class: "form-control", placeholder: @album.description %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Category" %>
+    <%= f.select :category_id, Category.all.collect { |category| [category.name, category.id] },
+    prompt: "Select a category", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <!-- <p class="help-block">Example block-level help text here.</p> -->
+    <%= f.label "Add images" %>
+    <%= file_field_tag "url[]", type: :file, multiple: true, class: "upload-image" %>
+  </div>
+
+  <div style="float: right;">
+    <%= f.submit "Upload", class: "btn btn-primary" %>
+    <%= link_to :back do %>
+    <button type="reset" class="btn btn-default">Cancel</button>
+    <% end %>
+  </div>
+</div>
+
+<div class="col-md-6">
+  <% if @album.images %>
+    <% @album.images.each do |image| %>
+      <div class="col-md-11">
+        <%= image_tag(image.url_url(:medium)) %>
+      </div>
+      <div class="col-md-1">
+        <%= link_to "x", image_path(image), method: "delete" %>
+      </div>
+    <% end %>
+  <% end %>
 </div>

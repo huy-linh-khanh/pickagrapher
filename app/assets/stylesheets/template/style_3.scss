@@ -1,5 +1,5 @@
 .login-theme-wrapper {
-  
+
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -111,7 +111,7 @@ img { max-width: 100%; }
 .form-top {
 	overflow: hidden;
 	padding: 0 25px 15px 25px;
-	background: #fff;
+	background: rgba(255,255,255,0.8);
 	-moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
 	text-align: left;
 }
@@ -136,7 +136,7 @@ img { max-width: 100%; }
 
 .form-bottom {
 	padding: 25px 25px 30px 25px;
-	background: #eee;
+	background: rgba(238,238,238,0.8);
 	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
 	text-align: left;
 }

@@ -55,19 +55,15 @@
   <%= render "devise/shared/links" %>
 </div> -->
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-<div class="login-theme-wrapper">
+<div class="login-theme-wrapper" style="margin-top:100px;padding:30px;background:url(http://www.kayture.com/wp-content/uploads/2014/06/best-photography-blogging.002.jpg);background-size:cover;">
   <div class="row">
-    <br />
-    <br />
-    <br />
-    <div class="col-sm-3"></div>
-    <div class="col-sm-6">
-
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
       <div class="form-box">
         <div class="form-top">
           <div class="form-top-left">
             <h3>Sign up now</h3>
-              <p>Fill in the form below to get instant access:</p>
+              <p>Fill in the form below:</p>
           </div>
           <div class="form-top-right">
             <i class="fa fa-pencil"></i>
@@ -78,38 +74,38 @@
             :html => {:multipart => true}, class:"registration-form" do |f| %>
             <%= devise_error_messages! %>
             <div class="form-group">
-              <%= f.label :name, class: "sr-only" %><br />
+
               <% unless params[:name] == nil %>
-                <%= f.text_field :name, value: params[:name], placeholder: "Fullname...", class: "form-first-name form-control" %>
+                <%= f.text_field :name, value: params[:name], class: "form-first-name form-control" %>
               <% else %>
-                <%= f.text_field :name, autofocus: true, placeholder: "Fullname...", class: "form-first-name form-control" %>
+                <%= f.text_field :name, autofocus: true, placeholder: "Fullname...", autocomplete: false, class: "form-first-name form-control" %>
               <% end %>
             </div>
             <div class="form-group">
-              <%= f.label "Email", class: "sr-only", for: "form-email" %>
-              <%= f.email_field :email, autofocus: true, placeholder: "Email...", class: "form-email form-control" %>
+              <%= f.email_field :email, autofocus: true, placeholder: "Email...", autocomplete: false, class: "form-email form-control" %>
             </div>
             <div class="form-group">
               <% if @minimum_password_length %>
               <em>(<%= @minimum_password_length %> characters minimum)</em>
               <% end %><br />
-              <%= f.label "Password", class: "sr-only", for: "form-password" %>
+
               <%= f.password_field :password, placeholder: "Password...", class: "form-password form-control" %>
             </div>
             <div class="form-group">
-              <%= f.label "Password confirmation", class: "sr-only", for: "form-password" %>
               <%= f.password_field :password_confirmation, placeholder: "Password confirmation...", class: "form-password form-control" %>
             </div>
             <%= hidden_field_tag :uid, params[:uid] %>
             <%= hidden_field_tag :provider, params[:provider] %>
-            <%= f.submit "Sign me up!", class: "btn" %>
+            <div style="text-align:center">
+              <%= f.submit "Sign me up!", class: "btn" %>
+            </div>
           <% end %>
 
         </div>
       </div>
       <div class="social-login">
-        <h3>...or login with:</h3>
-        <div class="social-login-buttons">
+        <h3 style="text-align:center;">...or login with:</h3>
+        <div class="social-login-buttons" style="text-align:center;">
           <a class="btn btn-link-1 btn-link-1-facebook" href="/auth/Facebook">
             <i class="fa fa-facebook"></i> Facebook
           </a>
@@ -117,15 +113,12 @@
             <i class="fa fa-twitter"></i> Twitter
           </a>
           <a class="btn btn-link-1 btn-link-1-google-plus" href="/auth/google_oauth2">
-            <i class="fa fa-google-plus"></i> Google Plus
+            <i class="fa fa-google-plus"></i> Google
           </a>
         </div>
       </div>
     </div>
-
-
-
-    <div class="col-sm-3"></div>
+    <div class="col-sm-4"></div>
   </div>
 </div>
 

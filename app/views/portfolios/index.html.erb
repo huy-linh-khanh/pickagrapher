@@ -39,16 +39,8 @@
 </div> -->
 
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-<!-- <link href="app/assets/stylesheets/template/studio-datepicker3.css" rel="stylesheet">
-<link href="app/assets/stylesheets/template/studio-styles.css" rel="stylesheet"> -->
-<div>
-  <div class="studio-theme-wrapper">
+<div class="studio-theme-wrapper">
   <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar" style="padding-top: 18px;">
-    <!-- <form role="search">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search">
-      </div>
-    </form> -->
     <ul class="nav menu">
       <br/>
       <li class="<%= 'active' if request.path == bookings_path %>">
@@ -66,9 +58,6 @@
           <span class="glyphicon glyphicon-euro"></span> Policies
         <% end %>
       </li>
-
-      <!-- <li role="presentation" class="divider"></li>
-      <li><a href="login.html"><span class="glyphicon glyphicon-user"></span> Logout</a></li> -->
     </ul>
   </div><!--/.sidebar-->
     </div>
@@ -112,6 +101,7 @@
               </div>
               <div class="col-md-3" style="padding-left: 60px; position: fixed; right: 0;">
                 <div class="affix" style="height: 70vh; background-color: #252527; position: relative;">
+
           <span class="custom-dropdown" style="width: 100%; font-family: Montserrat;">
             <select style="width: 100%;">
               <option>WEDDING</option>
@@ -120,6 +110,7 @@
               <option>PRODUCT</option>
             </select>
           </span>
+
                   <div style="padding: 2px 0 2px 0;">
                     <%= render partial: 'album_item_thumb', locals: {image_name: 'SoiPhotography-NganKhoa-fineart29', album_name: 'Sài Gòn - Anh yêu em' } %>
                     <%= render partial: 'album_item_thumb', locals: {image_name: 'SoiPhotography-Loc-Ha-16', album_name: 'Đà Lạt mộng mơ' } %>
@@ -136,4 +127,3 @@
       </div>
     </div>
   </div>
-</div>

@@ -1,6 +1,15 @@
 class AlbumsController < ApplicationController
   # before_action :authenticate_user!
 
+  def index
+    unless params[:category].empty?
+      @category = Category.where(name: params[:category].downcase.capitalize).first
+      @albums = Album.where(category: @category)
+    else
+      @albums = Album.all
+    end
+  end
+
   def new
     @album = Album.new
   end
@@ -32,7 +41,7 @@ class AlbumsController < ApplicationController
           @image = @album.images.create!(:url => u)
         end
       end
-      
+
       redirect_to portfolios_path, notice: "Your album has been updated successfully"
     else
       redirect_to :back

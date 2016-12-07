@@ -2,42 +2,48 @@
   <div id="wrap">
     <div class="content-wrapper">
       <div class="container clearfix">
+        <% @albums.in_groups_of(3) do |album_short_list| %>
+
+        <% @album = album_short_list.first unless album_short_list.first == nil? %>
         <div class="row">
-          <div class="image col-md-4 album-thumb" style="background-image: url(<%= asset_path('SoiPhotography-NganKhoa-fineart20') %>)">
+          <div class="image col-md-4 album-thumb" style="background-image: url(<%= @album.images.first.url_url(:medium) %>)">
             <div class="white white-bottom">
-              <h2><a href="/portfolios/1/view_album" style="color: #2B2B2B;">Sài Gòn - Anh yêu em</a></h2>
-              <p>Once in a while, right in the middle of an ordinary life... love gives us a fairytale.</p>
-              <p class="album-list-photographer-name">Sồi Photography</p>
+              <h2><a href="<%= album_path(@album) %>" style="color: #2B2B2B;"><%= @album.name %></a></h2>
+              <p><%= @album.description %></p>
+              <p class="album-list-photographer-name"><%= @album.portfolio.photographer.name %></p>
             </div>
           </div>
-          <div class="image col-md-8 album-thumb" style="background-image: url(<%= asset_path('SoiPhotography-NganKhoa-fineart19') %>)"></div>
+          <div class="image col-md-8 album-thumb" style="background-image: url(<%= @album.images.second.url_url(:medium) %>)"></div>
         </div>
 
+        <% @album = album_short_list.second unless album_short_list.second == nil? %>
         <div class="row" style="margin-top: 80px;">
-          <div class="image col-md-4 album-thumb" style="background-image: url(<%= asset_path('SoiPhotography-Nhi-Long17') %>)">
+          <div class="image col-md-4 album-thumb" style="background-image: url(<%= @album.images.first.url_url(:medium) %>)">
             <div class="white white-bottom" style="background-color: rgba(255,255,255,0.6);">
-              <h2><a href="/portfolios/1/view_album" style="color: #2B2B2B;">Đà Lạt mộng mơ</a></h2>
-              <p>Phasellus leo ante, posuere in fringilla vitae, pretium at dui. Fusce et neque quis odio gravida auctor velno.</p>
-              <p class="album-list-photographer-name">Tang Tang</p>
+              <h2><a href="<%= album_path(@album) %>" style="color: #2B2B2B;"><%= @album.name %></a></h2>
+              <p><%= @album.description %></p>
+              <p class="album-list-photographer-name"><%= @album.portfolio.photographer.name %></p>
             </div>
           </div>
-          <div class="image col-md-4 album-thumb" style="background-image: url(<%= asset_path('SoiPhotography-Nhi-Long26') %>)"></div>
-          <div class="image col-md-4 album-thumb" style="background-image: url(<%= asset_path('SoiPhotography-Nhi-Long15') %>)"></div>
+          <div class="image col-md-4 album-thumb" style="background-image: url(<%= @album.images.second.url_url(:medium) %>)"></div>
+          <div class="image col-md-4 album-thumb" style="background-image: url(<%= @album.images.third.url_url(:medium) %>)"></div>
         </div>
 
+        <% @album = album_short_list.third unless album_short_list.third == nil? %>
         <div class="row" style="margin-top: 80px;">
-          <div class="image col-md-4 album-thumb" style="background-image: url(<%= asset_path('SoiPhotography-Loc-Ha-16') %>)">
+          <div class="image col-md-4 album-thumb" style="background-image: url(<%= @album.images.first.url_url(:medium) %>)">
             <div class="white white-top">
-              <h2><a href="/portfolios/1/view_album" style="color: #2B2B2B;">Sồi - Ngân Khánh</a></h2>
-              <p>Phasellus leo ante, posuere in fringilla vitae, pretium at dui. Fusce et neque quis odio gravida auctor velno.</p>
-              <p class="album-list-photographer-name">Sồi Photography</p>
+              <h2><a href="<%= album_path(@album) %>" style="color: #2B2B2B;"><%= @album.name %></a></h2>
+              <p><%= @album.description %></p>
+              <p class="album-list-photographer-name"><%= @album.portfolio.photographer.name %></p>
             </div>
           </div>
-          <div class="image col-md-4 album-thumb-half" style="background-image: url(<%= asset_path('SoiPhotography-Loc-Ha-17') %>)"></div>
-          <div class="image col-md-4 album-thumb-half" style="background-image: url(<%= asset_path('SoiPhotography-Loc-Ha-20') %>)"></div>
-          <div class="image col-md-4 album-thumb-half" style="background-image: url(<%= asset_path('SoiPhotography-Loc-Ha-19') %>)"></div>
-          <div class="image col-md-4 album-thumb-half" style="background-image: url(<%= asset_path('SoiPhotography-Loc-Ha-10') %>)"></div>
+          <div class="image col-md-4 album-thumb-half" style="background-image: url(<%= @album.images.second.url_url(:medium) %>)"></div>
+          <div class="image col-md-4 album-thumb-half" style="background-image: url(<%= @album.images.third.url_url(:medium) %>)"></div>
+          <div class="image col-md-4 album-thumb-half" style="background-image: url(<%= @album.images.fourth.url_url(:medium) %>)"></div>
+          <div class="image col-md-4 album-thumb-half" style="background-image: url(<%= @album.images.fifth.url_url(:medium) %>)"></div>
         </div>
+        <% end %>
       </div>
     </div>
   </div>

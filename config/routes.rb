@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :countries, only: [:new, :create]
   resources :locations, only: [:new, :create]
   resources :categories, only: [:new, :create, :update, :show]
-  resources :albums, only: [:index, :new, :create, :update, :destroy, :show, :edit]
+  resources :albums
   resources :stores, only: [:index]
   resources :bookings
   resources :portfolios, only: [:index]
