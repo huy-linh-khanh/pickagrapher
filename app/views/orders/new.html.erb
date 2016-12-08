@@ -45,66 +45,80 @@
           <%= render partial: 'comment', locals: { user_name: 'ThaoMai', user_content: 'Keep up your good work!' } %>
         </div>
       </div>
+
       <div class="col-md-4" style="padding-left: 52px; position: fixed; right: 5vw; color: #DDD; font-family: Montserrat;">
-        <!-- <div class="affix" style="height: 70vh; background-color: #151517; position: relative; padding: 10px 18px 0 18px;"> -->
         <%= render partial: "payment" %>
-        <!-- <%= form_for Order.new do |f| %>
-             <%= f.hidden_field :photographer_id, :value => params[:photographer] %>
-             <%= f.hidden_field :category_id, :value => params[:category] %>
+      </div>
 
-             <table style="width: 100%;">
-             <tr>
-             <td>Start Date:</td>
-             <td>
-             <div style="width: 100%;" align="right">
-             <%= f.date_field :starts_date, :order => [:day, :month, :year] %>
-             </div>
-             </td>
-             </tr>
-             <tr>
-             <td>End Date:</td>
-             <td>
-             <div style="width: 100%;" align="right">
-             <%= f.date_field :ends_date, :order => [:day, :month, :year] %>
-             </div>
-             </td>
-             </tr>
-             <tr>
-             <td>Where to take:</td>
-             <td class="order-right-align"><%= f.select :location_id, Location.all.collect { |location| [location.name, location.id] }, prompt: "Select a location" %></td>
-             </tr>
-             <tr>
-             <td>Category:</td>
-             <td class="order-right-align"></td>
-             </tr>
-             <tr>
-             <td>Duration:</td>
-             <td class="order-right-align"></td>
-             </tr>
-             <tr>
-             <td>Travel charge:</td>
-             <td class="order-right-align"></td>
-             </tr>
-             </table>
+      <div class="col-md-4 chat-wrapper" style="padding-left: 52px; position: fixed; right: 5vw; bottom: 0vw;">
+        <div class="chat__human">
+          <%= image_tag(current_user.image_url ? current_user.image_url : current_user.profile_image, class: 'chat__avatar') %>
+          <span class="chat__name">Tang Tang</span>
+        </div>
+      </div>
 
-             <hr>
+      <div class="col-md-4 chat-wrapper" style="padding-left: 52px; position: fixed; right: 5vw; bottom: 0vw;">
+        <div class="conversation" style="display: block; width: calc(100% - 52px); right: 0px; height: auto;">
+          <div class="conversation__header" style="margin-bottom: 0;">
+            <b style="color: #FFF;">Tang Tang</b>
+          </div>
+          <div style="height: 400px; overflow-y: scroll;" id="chat-msg-content">
+            <ul class="conversation__wrap">
+              <!-- <li class="conversation__msg cf">
+                   <span>Hey!</span>
+                   </li> -->
 
-             <table>
-             <tr>
-             <td>Total:</td>
-             <td class="order-right-align"></td>
-             </tr>
-             <tr>
-             <td>*Included tax</td>
-             </tr>
-             </table>
+              <!-- <li class="conversation__msg cf">
+                   <span class="right">Bruh.</span>
+                   </li> -->
+            </ul>
+          </div>
 
-             <button onclick="alert('Your order is placed successfully!')" type="button" style="position: absolute; bottom: 0px; left: 0px; width: 100%; font-family: Montserrat; border-radius: 0; height: 40px;" class="btn btn-danger">BOOK
-             NOW
-             </button>
-             <% end %> -->
-        <!-- </div> -->
+          <input class="input" type="text" placeholder="Enter Message" id="chat-message-field" style="position: static;">
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+ function filter_forbidden_pattern(x) {
+   return Array(x.length).join("█");
+ }
+
+ $("#chat-message-field").keypress(function (e) {
+   var key = e.which;
+   if (key == 13) {
+     var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+     var phoneNoPattern = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+     var someText = $('#chat-message-field').val();
+     var patterns = [emailPattern, phoneNoPattern];
+     patterns.forEach(function (pattern) {
+       someText = someText.replace(pattern, filter_forbidden_pattern);
+     });
+
+     $('#chat-message-field').val('')
+     var newDiv = $("<li>", { "class": "conversation__msg cf" }).append($("<span>", { "class": "right" }).append(someText));
+     $("ul.conversation__wrap").append(newDiv);
+   }
+ });
+
+ $('.js-trigger').on('click', function() {
+   $('html').toggleClass('show-me')
+ });
+
+ $('.conversation__header').on('click', function() {
+   $('.conversation').slideToggle(300);
+ });
+
+ $('.chat__human').on('click', function() {
+   $('.conversation').slideToggle(300);
+ });
+</script>
+
+<style>
+ #chat-msg-content::-webkit-scrollbar {
+   display: none;
+ }
+</style>
